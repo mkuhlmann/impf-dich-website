@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Home">
+	<div
+		class="absolute"
+		style="height: 450px; z-index: -100;transform: scaleX(-1) "
+	>
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 100"
+			preserveAspectRatio="none"
+			style="height: 450px; width: 100%;  "
+		>
+			<path
+				d="M0,0 L0,100 1200,0 1200,0"
+				style="fill: var(--color-blue-primary);"></path>
+			<path d="M0,0 L0,60 1200,0 1200,0" style="fill: #fff;"></path>
+			<path
+				d="M0,0 L0,30 1200,0 1200,0"
+				style="fill: var(--color-blue-secondary);"></path>
+		</svg>
+	</div>
+
+	<div
+		class="max-w-screen-xl mx-auto bg-white px-5 md:rounded-b-md shadow-md"
+	>
+		<nav class="md:flex gap-5 items-center">
+			<div class="flex-start py-2">
+				<img
+					src="/logo-quer-rgb.svg"
+					alt="Impf Dich Logo"
+					width="240"
+				/>
+			</div>
+			<a href="/">Aktuelles</a>
+			<a href="/">Über uns</a>
+			<a href="/">Projekte</a>
+			<a href="/">Wissen</a>
+			<div class="ml-auto">
+				<a
+					class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="w-6 h-6"
+					>
+						<path
+							d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+						></path>
+					</svg>
+
+					Unterstützen
+				</a>
+			</div>
+		</nav>
+	</div>
+
+	<main class="my-20">
+		<div class="md:flex max-w-screen-xl mx-auto items-center">
+			<div class="max-w-lg">
+				<h1 class="text-6xl font-semibold text-gray-700 mb-5">
+					Lorem ipsum
+				</h1>
+				<div>
+					Impfen ist eine Entscheidung, die nur bei ausreichenden
+					Informationen richtig gefällt werden kann. Der ehrenamtliche
+					Verein für Impfaufklärung in Deutschland hat es sich zur
+					Aufgabe gemacht, gegen Halbwissen und Vorurteile rund um das
+					Thema Impfung und Immunisierung aufzuklären.
+				</div>
+				<div class="mt-10">
+					<a
+						href="#"
+						class="rounded inline-block bg-impf hover:bg-sky-600 text-white text-xl py-3 px-5 gap-2 items-center cursor-pointer"
+					>
+						Mitmachen
+					</a>
+				</div>
+			</div>
+
+			<div
+				class="md:ml-auto rounded-md lg:-mr-20 overflow-hidden md:overflow-visible border-gray-200 shadow-lg ease-in-out duration-500 rotate-1 hover:rotate-3"
+			>
+				<img
+					src="/schueler.jpg"
+					class="object-cover w-[700px] h-[400px] rounded-md"
+				/>
+			</div>
+		</div>
+
+		<div class="max-w-screen-xl mx-auto mt-10">
+			<div
+				class="p-4 mb-4 text-lg text-white bg-impf rounded-lg"
+				role="alert"
+			>
+				<span class="font-bold">Aktuell</span>
+				<span class="border-l-white border-l-2 mx-2"></span>
+				<a href="/news/2022-10-30-bundestreffen-2022">
+					Bundestreffen 2022
+				</a>
+			</div>
+		</div>
+
+		<div class="max-w-screen-xl mx-auto mt-10">
+			<h1 class="text-2xl font-bold">Projekte</h1>
+			<div class="flex"></div>
+		</div>
+
+		<div>
+			<div class="max-w-screen-xl mx-auto">
+				<div class="absolute text-white" style="opacity: 0.3;">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="w-60 h-60"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</div>
+			</div>
+			<svg
+				data-name="Layer 1"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1200 30"
+				preserveAspectRatio="none"
+				style="height: 134px; width: 100%;  "
+			>
+				<path d="M0,0 L1200,30 0,30" style="fill: rgb(55, 65, 81);"
+				></path>
+			</svg>
+		</div>
+
+		<div class="bg-gray-700">
+			<div class="max-w-screen-xl mx-auto text-white">
+				<h1 class="text-2xl font-bold">Lokalgruppen</h1>
+			</div>
+		</div>
+
+		<div>
+			<svg
+				data-name="Layer 1"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1200 30"
+				preserveAspectRatio="none"
+				style="height: 134px; width: 100%;  "
+			>
+				<path d="M0,0 L1200,0 1200,30" style="fill: rgb(55, 65, 81);"
+				></path>
+			</svg>
+		</div>
+	</main>
+
+	<footer class="footer bg-gray-700 text-white">
+		<div class="flex max-w-screen-xl mx-auto py-5">
+			<div class="flex-1">
+				<h3 class="text-xl mb-2">Soziale Medien</h3>
+			</div>
+			<div class="flex-1"></div>
+			<div class="flex-1">
+				<h3 class="text-xl mb-2">Kontakt</h3>
+				<div>
+					Impfaufklärung in Deutschland e.V.<br />
+					info@impf-dich.org<br /><br />
+					Simrockstraße 16<br />
+					53619 Rheinbreitbach<br />
+					Deutschland
+				</div>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	.footer {
+		border-top: 6px solid var(--color-blue-primary);
+	}
+</style>
