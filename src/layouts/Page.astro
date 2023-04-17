@@ -1,0 +1,40 @@
+---
+import Navbar from '@/components/Navbar.astro';
+import Layout from './Layout.astro';
+import Footer from '@/components/Footer.astro';
+import { Img } from 'astro-imagetools/components';
+
+const { content } = Astro.props;
+
+let heroImagePath = null;
+
+if (content.heroImage) {
+	const file: string = Astro.props.file;
+	// get directory path of file
+	const dir = file.substring(0, file.lastIndexOf('/'));
+
+	heroImagePath = dir + '/' + content.heroImage;
+}
+---
+
+<Layout title="Page">
+	<Navbar />
+
+	{
+		heroImagePath && (
+			<div class="bg-gray-700" style="margin-top: -20px; z-index: -100;">
+				<div class="container mx-auto flex justify-center">
+					<Img alt="bla" src={heroImagePath} />
+				</div>
+			</div>
+		)
+	}
+
+	<div class="container mx-auto my-10">
+		<h1 class="text-4xl">{content.title}</h1>
+
+		<slot />
+	</div>
+
+	<Footer />
+</Layout>
