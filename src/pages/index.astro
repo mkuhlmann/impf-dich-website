@@ -5,6 +5,10 @@ import Footer from '@/components/Footer.astro';
 import 'leaflet/dist/leaflet.css';
 import Navbar from '@/components/Navbar.astro';
 
+import fbox1 from '../assets/fbox-1.jpg';
+import fbox2 from '../assets/fbox-2.jpg';
+import fbox3 from '../assets/fbox-3.jpg';
+
 const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 ---
 
@@ -47,11 +51,19 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 			</div>
 		</div>
 
-		<div class="container mx-auto mt-10">
-			<h1 class="text-3xl font-bold">Was wir machen</h1>
-			<div class="flex">
-				<div class="bg-gray-200">
-					<h2>Aufklären</h2>
+		<div class="container mx-auto my-10">
+			<h1 class="text-3xl heading mb-5">Was wir machen</h1>
+			<div class="flex gap-5">
+				<div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+					<h2 class="text-center text-2xl mb-3">Aufklären</h2>
+					<img src={fbox1.src} width={fbox1.width} height={fbox1.height} alt="Aufklären" />
+				</div>
+				<div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+					<h2 class="text-center text-2xl mb-3">Impformieren</h2>
+					<img src={fbox2.src} width={fbox2.width} height={fbox2.height} alt="Aufklären" />
+				</div><div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+					<h2 class="text-center text-2xl mb-3">Forschen</h2>
+					<img src={fbox3.src} width={fbox3.width} height={fbox3.height} alt="Aufklären" />
 				</div>
 			</div>
 		</div>
@@ -74,11 +86,10 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 
 		<div class="bg-gray-700">
 			<div class="container mx-auto text-white pb-5">
-				<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
-				<h1 class="text-3xl font-bold mb-5">Lokalgruppen</h1>
-
 				<div class="flex">
 					<div class="flex-1 z-10">
+						<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
+						<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
 						{
 							lokalgruppen.map((lokalgruppe) => (
 								<a href={lokalgruppe.url} class="text-sky-300 text-xl py-3 cursor-pointer">
@@ -136,6 +147,10 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 30" preserveAspectRatio="none" style="height: 80px; width: 100%;  ">
 				<path d="M0,0 L1200,0 1200,30" style="fill: rgb(55, 65, 81);"></path>
 			</svg>
+		</div>
+
+		<div class="container mx-auto mb-10">
+			<h1 class="text-3xl font-bold mb-5">Engagieren!</h1>
 		</div>
 	</main>
 

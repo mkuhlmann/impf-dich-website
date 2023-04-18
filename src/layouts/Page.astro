@@ -30,10 +30,10 @@ if (content.heroImage) {
 		)
 	}
 
-	<div class="container mx-auto my-10">
-		<h1 class="text-4xl">{content.title}</h1>
+	<div class="container mx-auto p-5" style="margin-top: 80px;">
+		<h1 class="text-4xl mb-5">{content.title}</h1>
 
-		<slot />
+		<article class="content"><slot /></article>
 	</div>
 
 	<Footer />

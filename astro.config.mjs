@@ -7,4 +7,7 @@ import { astroImageTools } from 'astro-imagetools';
 // https://astro.build/config
 export default defineConfig({
 	integrations: [tailwind(), astroImageTools],
+	experimental: {
+		assets: true,
+	},
 });
