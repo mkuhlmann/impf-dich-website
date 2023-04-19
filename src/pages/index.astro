@@ -8,11 +8,10 @@ import Navbar from '@/components/Navbar.astro';
 import fbox1 from '../assets/fbox-1.jpg';
 import fbox2 from '../assets/fbox-2.jpg';
 import fbox3 from '../assets/fbox-3.jpg';
+import schueler from '@/assets/schueler.jpg';
 
 const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 ---
-
-<script type="module" src={(await import('../scripts/leaflet.js?url')).default}></script>
 
 <Layout title="Home">
 	<div class="absolute top-0" style="height: 450px; z-index: -100;transform: scaleX(-1) ">
@@ -28,6 +27,8 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 	<main style="margin-top: 150px;">
 		<div class="md:flex container mx-auto items-center">
 			<div class="max-w-lg">
+				<h1 class="text-5xl heading mb-5">Impf Dich!</h1>
+
 				<div class="text-xl">
 					Impfen ist eine Entscheidung, die nur bei ausreichenden Informationen richtig gefällt werden kann. Der ehrenamtliche Verein für Impfaufklärung in Deutschland hat es sich zur Aufgabe gemacht,
 					gegen Halbwissen und Vorurteile rund um das Thema Impfung und Immunisierung aufzuklären.
@@ -39,14 +40,14 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 			</div>
 
 			<div class="md:ml-auto rounded-md lg:-mr-20 overflow-hidden md:overflow-visible border-gray-200 shadow-lg ease-in-out duration-500 rotate-1 hover:rotate-3">
-				<img src="/schueler.jpg" class="object-cover w-[700px] h-[400px] rounded-md" />
+				<img src={schueler.src} class="object-cover w-[700px] h-[400px] rounded-md" />
 			</div>
 		</div>
 
 		<div class="container mx-auto mt-10">
 			<div class="p-4 mb-4 text-lg text-white bg-impf rounded-lg" role="alert">
-				<span class="font-bold">Aktuell</span>
-				<span class="border-l-white border-l-2 mx-2"></span>
+				<span class="font-bold mr-5">Aktuell</span>
+				<!-- <span class="border-l-white border-l-2 mx-4"></span> -->
 				<a href="/news/2022-10-30-bundestreffen-2022"> Bundestreffen 2022</a>
 			</div>
 		</div>
@@ -102,21 +103,22 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 					<div id="lgmap" class="flex-1 rounded-xl" style="height: 450px; z-index: 0;"></div>
 				</div>
 
-				<div id="lglokal" class="hidden">
-					{
-						JSON.stringify(
-							lokalgruppen.map((lokalgruppe) => {
-								return {
-									name: lokalgruppe.frontmatter.title,
-									href: lokalgruppe.url,
-									coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
-								};
-							})
-						)
-					}
-				</div>
+				<div
+					id="lglokal"
+					class="hidden"
+					set:html={JSON.stringify(
+						lokalgruppen.map((lokalgruppe) => {
+							return {
+								name: lokalgruppe.frontmatter.title,
+								href: lokalgruppe.url,
+								coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
+							};
+						})
+					)}
+				/>
 
 				<script>
+					import * as L from 'leaflet';
 					var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
 
 					L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

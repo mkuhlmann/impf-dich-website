@@ -15,23 +15,25 @@ if (content.heroImage) {
 
 	heroImagePath = dir + '/' + content.heroImage;
 }
+
+const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
-<Layout title="Page">
+<Layout title={title}>
 	<Navbar />
 
 	{
 		heroImagePath && (
-			<div class="bg-gray-700" style="margin-top: -20px; z-index: -100;">
-				<div class="container mx-auto flex justify-center">
+			<div class="bg-gray-700" style=" z-index: -100;">
+				<div class="container mx-auto flex justify-center" style="padding-top: 80px;">
 					<Img alt="bla" src={heroImagePath} />
 				</div>
 			</div>
 		)
 	}
 
-	<div class="container mx-auto p-5" style="margin-top: 80px;">
-		<h1 class="text-4xl mb-5">{content.title}</h1>
+	<div class="container mx-auto px-5 py-10" style={!heroImagePath ? 'margin-top: 80px;' : ''}>
+		<h1 class="text-4xl mb-5 heading">{content.title}</h1>
 
 		<article class="content"><slot /></article>
 	</div>

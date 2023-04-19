@@ -1,3 +1,10 @@
+---
+const posts = await Astro.glob('/src/posts/**/*.md');
+
+// limit to 5 posts
+const postsToShow = posts.slice(0, 5);
+---
+
 <footer class="footer bg-gray-700 text-white border-t-impf border-t-8">
 	<div class="flex container mx-auto py-5">
 		<div class="flex-1">
@@ -31,11 +38,25 @@
 			</div>
 		</div>
 
-		<div class="flex-1 flex items-end">
-			<ul class="list-disc">
-				<li><a href="/de/meta/impressum">Impressum</a></li>
-				<li>Datenschutz</li>
+		<div class="flex-1">
+			<h3 class="text-xl mb-2">Aktuell</h3>
+
+			<ul class="mb-4">
+				{
+					postsToShow.map((post) => (
+						<li>
+							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + post.frontmatter.slug} class="block mb-2">
+								{post.frontmatter.title}
+							</a>
+						</li>
+					))
+				}
 			</ul>
+
+			<div class="text-sm text-gray-300">
+				<a class="cursor-pointer hover:underline" href="/de/meta/impressum">Impressum</a> /
+				<a class="cursor-pointer hover:underline" href="/de/meta/datenschutz">Datenschutz</a>
+			</div>
 		</div>
 	</div>
 </footer>

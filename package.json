@@ -1,5 +1,6 @@
 {
-	"name": "@example/basics",
+	"name": "@mkuhlmann/impf-dich-website",
+	"author": "Manuel Kuhlmann",
 	"type": "module",
 	"version": "0.0.1",
 	"private": true,
