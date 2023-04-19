@@ -1,13 +1,15 @@
 ---
 title: Preise / Auszeichnungen
-
 layout: '@/layouts/Page.astro'
 ---
 
-<div class="flex">
+import { Image } from 'astro:assets';
+import ImgCharity from './2020-springer-charity-award.png';
+
+<div class="flex gap-10">
 <div>
 
-![Springer Charity award](./2020-springer-charity-award.png)
+<Image src={ImgCharity.src} alt="Springer Charity Award 2020" width="300" height="300" />
 
 </div>
 <div>
