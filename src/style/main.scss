@@ -14,6 +14,14 @@
 	p {
 		@apply my-2;
 	}
+
+	ul {
+		@apply list-disc;
+
+		li {
+			@apply ml-4;
+		}
+	}
 }
 
 .content a,
@@ -23,4 +31,8 @@ a.link {
 
 .heading {
 	font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tw-input {
+	@apply border border-gray-300 rounded-lg p-2 focus:border-impf focus:ring-impf;
 }

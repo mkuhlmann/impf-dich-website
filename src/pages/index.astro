@@ -35,7 +35,14 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 				</div>
 
 				<div class="mt-10">
-					<a href="#" class="rounded inline-block bg-impf hover:bg-sky-600 text-white text-xl py-3 px-5 gap-2 items-center cursor-pointer"> Mitmachen</a>
+					<a href="#" class="rounded bg-impf hover:bg-sky-600 text-white text-xl flex py-3 px-5 gap-2 items-center cursor-pointer">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"
+							><title>hand-wave-outline</title><path
+								d="M7.03 4.95L3.5 8.5C.17 11.81 .17 17.19 3.5 20.5S12.19 23.83 15.5 20.5L21.5 14.5C22.5 13.53 22.5 11.94 21.5 10.96C21.4 10.84 21.27 10.73 21.13 10.64L21.5 10.25C22.5 9.28 22.5 7.69 21.5 6.71C21.36 6.55 21.17 6.41 21 6.3C21.38 5.38 21.21 4.28 20.46 3.53C19.59 2.66 18.24 2.57 17.26 3.25C17.16 3.1 17.05 2.96 16.92 2.83C15.95 1.86 14.36 1.86 13.38 2.83L10.87 5.34C10.78 5.2 10.67 5.07 10.55 4.95C9.58 4 8 4 7.03 4.95M8.44 6.37C8.64 6.17 8.95 6.17 9.15 6.37S9.35 6.88 9.15 7.08L5.97 10.26C7.14 11.43 7.14 13.33 5.97 14.5L7.38 15.91C8.83 14.46 9.2 12.34 8.5 10.55L14.8 4.25C15 4.05 15.31 4.05 15.5 4.25S15.71 4.76 15.5 4.96L10.91 9.56L12.32 10.97L18.33 4.96C18.53 4.76 18.84 4.76 19.04 4.96C19.24 5.16 19.24 5.47 19.04 5.67L13.03 11.68L14.44 13.09L19.39 8.14C19.59 7.94 19.9 7.94 20.1 8.14C20.3 8.34 20.3 8.65 20.1 8.85L14.44 14.5L15.85 15.92L19.39 12.38C19.59 12.18 19.9 12.18 20.1 12.38C20.3 12.58 20.3 12.89 20.1 13.09L14.1 19.1C11.56 21.64 7.45 21.64 4.91 19.1S2.37 12.45 4.91 9.91L8.44 6.37M23 17C23 20.31 20.31 23 17 23V21.5C19.5 21.5 21.5 19.5 21.5 17H23M1 7C1 3.69 3.69 1 7 1V2.5C4.5 2.5 2.5 4.5 2.5 7H1Z"
+							></path></svg
+						>
+						Mitmachen</a
+					>
 				</div>
 			</div>
 
@@ -55,14 +62,14 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 		<div class="container mx-auto my-10">
 			<h1 class="text-3xl heading mb-5">Was wir machen</h1>
 			<div class="flex gap-5">
-				<div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Aufklären</h2>
 					<img src={fbox1.src} width={fbox1.width} height={fbox1.height} alt="Aufklären" />
 				</div>
-				<div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Impformieren</h2>
 					<img src={fbox2.src} width={fbox2.width} height={fbox2.height} alt="Aufklären" />
-				</div><div class="flex-1 bg-slate-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+				</div><div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Forschen</h2>
 					<img src={fbox3.src} width={fbox3.width} height={fbox3.height} alt="Aufklären" />
 				</div>
@@ -91,13 +98,15 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 					<div class="flex-1 z-10">
 						<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
 						<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
-						{
-							lokalgruppen.map((lokalgruppe) => (
-								<a href={lokalgruppe.url} class="text-sky-300 text-xl py-3 cursor-pointer">
-									{lokalgruppe.frontmatter.title}
-								</a>
-							))
-						}
+						<div class="grid grid-cols-5 gap-5 pr-10">
+							{
+								lokalgruppen.map((lokalgruppe) => (
+									<a href={lokalgruppe.url} class="text-white text-center text-lg p-3 cursor-pointer bg-gray-500 opacity-90 rounded-lg hover:opacity-100">
+										{lokalgruppe.frontmatter.title}
+									</a>
+								))
+							}
+						</div>
 					</div>
 
 					<div id="lgmap" class="flex-1 rounded-xl" style="height: 450px; z-index: 0;"></div>
@@ -118,25 +127,27 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 				/>
 
 				<script>
+					/* @ts-ignore */
 					import * as L from 'leaflet';
+
 					var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
 
 					L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 						attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 					}).addTo(map);
 
-					var lokalgruppen = JSON.parse(document.querySelector('#lglokal').innerText);
+					var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
 
-					async function geocode(city, apiKey) {
-						let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
+					// async function geocode(city, apiKey) {
+					// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
 
-						if (!json || !json.results.length > 0) {
-							console.error('error geocoding city: ' + city);
-						}
-						return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
-					}
+					// 	if (!json || !json.results.length > 0) {
+					// 		console.error('error geocoding city: ' + city);
+					// 	}
+					// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
+					// }
 
-					lokalgruppen.forEach(function (lokalgruppe) {
+					lokalgruppen.forEach(function (lokalgruppe: any) {
 						L.marker(lokalgruppe.coords)
 							.addTo(map)
 							.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
@@ -152,7 +163,58 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 		</div>
 
 		<div class="container mx-auto mb-10">
-			<h1 class="text-3xl font-bold mb-5">Engagieren!</h1>
+			<h1 class="text-3xl font-heading mb-5">Engagieren</h1>
+
+			<div class="content mb-5">
+				<p>
+					Du studierst Medizin, Biologie, Pharmazie oder einen ähnlichen Studiengang? Du willst Dich ehrenamtlich engagieren und findest, dass Impfungen ein wichtiges Thema sind? Du bist ein*e
+					Teamplayer*in und arbeitest gerne mit Schüler*innen, Migrant*innen und anderen Studierenden? Dann bist du bei uns genau richtig!
+				</p><p>
+					Unsere Initiative findet derzeit nur an wenigen Fakultäten in Deutschland statt. Das wollen wir schleunigst ändern. Wenn Du Lust hast, Dich in unserem Netzwerk zu engagieren und eine
+					Lokalgruppe zu gründen, fülle bitte folgendes Formular aus. Wir nehmen den Kontakt zu Dir auf.
+				</p>
+			</div>
+
+			<form method="POST">
+				<div class="flex flex-col md:flex-row gap-5 mb-2">
+					<div class="flex-1 flex flex-col">
+						<label for="vorname" class="text-gray-600 mb-1">Vorname</label>
+						<input type="text" name="vorname" id="vorname" class="tw-input" required />
+					</div>
+
+					<div class="flex-1 flex flex-col">
+						<label for="nachname" class="text-gray-600 mb-1">Nachname</label>
+						<input type="text" name="nachname" id="nachname" class="tw-input" required />
+					</div>
+				</div>
+
+				<div class="flex flex-col mb-2">
+					<label for="email" class="text-gray-600 mb-1">E-Mail</label>
+					<input type="email" name="email" id="email" class="tw-input" required />
+				</div>
+
+				<div class="flex flex-col md:flex-row gap-5 mb-2">
+					<div class="flex-1 flex flex-col">
+						<label for="studienfach" class="text-gray-600 mb-1">Studienfach</label>
+						<input type="text" name="studienfach" id="studienfach" class="tw-input" required />
+					</div>
+
+					<div class="flex-1 flex flex-col">
+						<label for="studienort" class="text-gray-600 mb-1">Studienort</label>
+						<input type="text" name="studienort" id="studienort" class="tw-input" required />
+					</div>
+
+					<div class="shrink flex flex-col">
+						<label for="semester" class="text-gray-600 mb-1">Semester</label>
+						<input type="text" name="semester" id="semester" class="tw-input" required />
+					</div>
+				</div>
+
+				<div class="flex flex-col">
+					<label for="message" class="text-gray-600 mb-1">Nachricht</label>
+					<textarea name="message" id="message" class="tw-input" required></textarea>
+				</div>
+			</form>
 		</div>
 	</main>
 

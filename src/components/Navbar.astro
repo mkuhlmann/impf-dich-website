@@ -1,13 +1,24 @@
+---
+export interface Props {
+	rounded?: boolean;
+}
+
+const { rounded = true } = Astro.props as Props;
+---
+
 <div class="w-full absolute top-0">
-	<div class="container mx-auto bg-white px-5 md:rounded-b-md shadow-md" style="z-index: 1000;">
+	<div class={'container mx-auto bg-white px-5 shadow-md' + (rounded ? ' md:rounded-b-md' : '')} style="z-index: 1000;">
 		<nav class="md:flex gap-5 items-center">
-			<a href="/" class="flex-start py-2">
+			<a href="/" class="flex-start py-2 mr-2">
 				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="240" />
 			</a>
 			<a href="/news">Aktuelles</a>
 			<a href="/">Über uns</a>
+
+			<a href="/">Lokalgruppen</a>
 			<a href="/">Projekte</a>
 			<a href="/">Wissen</a>
+
 			<div class="ml-auto">
 				<a href="/de/meta/unterstuetzen" class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
