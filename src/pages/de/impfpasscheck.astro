@@ -1,0 +1,28 @@
+---
+import Page from '@/layouts/Page.astro';
+
+import { Image } from 'astro:assets';
+import ImpfpasscheckImg from '@/assets/impf-check.jpg';
+---
+
+<Page title="Impfpasscheck">
+	<div class="content">
+		<Image width={150} src={ImpfpasscheckImg} alt="Impfpasscheck" class="float-right ml-5" />
+		<p>
+			Welche Impfungen sind für Sie empfohlen? Haben Sie und Ihre Kinder alle Impfungen erhalten? Dies sind Fragen, die sich theoretisch mit dem Impfpass und der Impfkalender des
+			Robert-Koch-Institutes beantworten lassen. Doch das ist einfacher gesagt als getan, ein Impfpass ist meist unübersichtlich und was bedeuten genau die Einträge im Impfkalender?
+		</p>
+		<p>
+			Damit auch Sie unkompliziert Antworten auf diese Fragen bekommen, bieten wir Ihnen unseren kostenlosen Impfpasscheck an. Senden Sie uns einfach Ihren Impfpass zu (bitte nur einen pro
+			Übermittelung) und wir melden uns bei Ihnen schnellstmöglich mit einer Übersicht ob und welche Impfungen Sie oder Ihre Kinder benötigen!
+		</p>
+	</div>
+
+	<hr class="my-5" />
+
+	<iframe
+		src="https://app.impf-dich.org/impfpasscheck/embed?lang=de"
+		style="width: 100%; border: none; height: 800px;"
+		scrolling="no"
+		onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';"></iframe>
+</Page>
