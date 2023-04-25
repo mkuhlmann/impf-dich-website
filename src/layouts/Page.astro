@@ -8,7 +8,7 @@ const { content } = Astro.props;
 
 let heroImagePath = null;
 
-if (content.heroImage) {
+if (content && content.heroImage) {
 	const file: string = Astro.props.file;
 	// get directory path of file
 	const dir = file.substring(0, file.lastIndexOf('/'));
@@ -34,11 +34,11 @@ const { title } = Astro.props.frontmatter || Astro.props;
 
 	<div class="container mx-auto border-x-2 border-gray-200">
 		<div class="px-5 py-6 bg-gray-100" style={!heroImagePath ? 'margin-top: 80px;' : ''}>
-			<h1 class="text-4xl heading">{content.title}</h1>
+			<h1 class="text-4xl heading">{title}</h1>
 		</div>
 
 		<div class="p-5 bg-white">
-			<article class="content"><slot /></article>
+			<article class={content ? 'content' : ''}><slot /></article>
 		</div>
 	</div>
 

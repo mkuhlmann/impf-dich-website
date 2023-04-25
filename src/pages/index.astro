@@ -26,15 +26,14 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 
 	<main style="margin-top: 150px;">
 		<div class="md:flex container mx-auto items-center">
-			<div class="max-w-lg">
-				<h1 class="text-5xl heading mb-5">Impf Dich!</h1>
+			<div class="max-w-2xl">
+				<h2 class="text-3xl font-heading mb-5">Schütze Dich und andere</h2>
 
-				<div class="text-xl">
-					Impfen ist eine Entscheidung, die nur bei ausreichenden Informationen richtig gefällt werden kann. Der ehrenamtliche Verein für Impfaufklärung in Deutschland hat es sich zur Aufgabe gemacht,
-					gegen Halbwissen und Vorurteile rund um das Thema Impfung und Immunisierung aufzuklären.
-				</div>
+				<h1 class="text-5xl font-bold font-heading"><span class="text-impf">Impf</span> <span class="text-impf-2">Dich</span>.</h1>
 
-				<div class="mt-10">
+				<!-- <div class="text-xl">Mach mit bei der Impf-Initiative und helfe, die Verbreitung von Krankheiten zu stoppen. Impf Dich - für eine gesündere Zukunft!</div> -->
+
+				<div class="mt-10 flex gap-5">
 					<a href="#" class="rounded bg-impf hover:bg-sky-600 text-white text-xl flex py-3 px-5 gap-2 items-center cursor-pointer">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"
 							><title>hand-wave-outline</title><path
@@ -42,6 +41,16 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 							></path></svg
 						>
 						Mitmachen</a
+					>
+
+					<a href="#" class="rounded bg-green-500 hover:bg-green-600 text-white text-xl flex py-3 px-5 gap-2 items-center cursor-pointer">
+						<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+							<path
+								d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+								stroke-linecap="round"
+								stroke-linejoin="round"></path>
+						</svg>
+						Impfpass-Check</a
 					>
 				</div>
 			</div>
@@ -51,27 +60,19 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 			</div>
 		</div>
 
-		<div class="container mx-auto mt-10">
-			<div class="p-4 mb-4 text-lg text-white bg-impf rounded-lg" role="alert">
-				<span class="font-bold mr-5">Aktuell</span>
-				<!-- <span class="border-l-white border-l-2 mx-4"></span> -->
-				<a href="/news/2022-10-30-bundestreffen-2022"> Bundestreffen 2022</a>
-			</div>
-		</div>
-
-		<div class="container mx-auto my-10">
-			<h1 class="text-3xl heading mb-5">Was wir machen</h1>
+		<div class="container mx-auto mb-10 mt-14">
 			<div class="flex gap-5">
 				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Aufklären</h2>
 					<img src={fbox1.src} width={fbox1.width} height={fbox1.height} alt="Aufklären" />
 				</div>
 				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
-					<h2 class="text-center text-2xl mb-3">Impformieren</h2>
-					<img src={fbox2.src} width={fbox2.width} height={fbox2.height} alt="Aufklären" />
-				</div><div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Forschen</h2>
 					<img src={fbox3.src} width={fbox3.width} height={fbox3.height} alt="Aufklären" />
+				</div>
+				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-md ease-in-out duration-500 hover:scale-105">
+					<h2 class="text-center text-2xl mb-3">Impformieren</h2>
+					<img src={fbox2.src} width={fbox2.width} height={fbox2.height} alt="Aufklären" />
 				</div>
 			</div>
 		</div>
@@ -94,7 +95,7 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 
 		<div class="bg-gray-700">
 			<div class="container mx-auto text-white pb-5">
-				<div class="flex">
+				<div class="flex flex-col md:flex-row">
 					<div class="flex-1 z-10">
 						<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
 						<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
@@ -109,7 +110,7 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 						</div>
 					</div>
 
-					<div id="lgmap" class="flex-1 rounded-xl" style="height: 450px; z-index: 0;"></div>
+					<div id="lgmap" class="flex-1 rounded-xl" style="height: 450px; z-index: 0; width:100%;"></div>
 				</div>
 
 				<div
@@ -174,47 +175,6 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 					Lokalgruppe zu gründen, fülle bitte folgendes Formular aus. Wir nehmen den Kontakt zu Dir auf.
 				</p>
 			</div>
-
-			<form method="POST">
-				<div class="flex flex-col md:flex-row gap-5 mb-2">
-					<div class="flex-1 flex flex-col">
-						<label for="vorname" class="text-gray-600 mb-1">Vorname</label>
-						<input type="text" name="vorname" id="vorname" class="tw-input" required />
-					</div>
-
-					<div class="flex-1 flex flex-col">
-						<label for="nachname" class="text-gray-600 mb-1">Nachname</label>
-						<input type="text" name="nachname" id="nachname" class="tw-input" required />
-					</div>
-				</div>
-
-				<div class="flex flex-col mb-2">
-					<label for="email" class="text-gray-600 mb-1">E-Mail</label>
-					<input type="email" name="email" id="email" class="tw-input" required />
-				</div>
-
-				<div class="flex flex-col md:flex-row gap-5 mb-2">
-					<div class="flex-1 flex flex-col">
-						<label for="studienfach" class="text-gray-600 mb-1">Studienfach</label>
-						<input type="text" name="studienfach" id="studienfach" class="tw-input" required />
-					</div>
-
-					<div class="flex-1 flex flex-col">
-						<label for="studienort" class="text-gray-600 mb-1">Studienort</label>
-						<input type="text" name="studienort" id="studienort" class="tw-input" required />
-					</div>
-
-					<div class="shrink flex flex-col">
-						<label for="semester" class="text-gray-600 mb-1">Semester</label>
-						<input type="text" name="semester" id="semester" class="tw-input" required />
-					</div>
-				</div>
-
-				<div class="flex flex-col">
-					<label for="message" class="text-gray-600 mb-1">Nachricht</label>
-					<textarea name="message" id="message" class="tw-input" required></textarea>
-				</div>
-			</form>
 		</div>
 	</main>
 

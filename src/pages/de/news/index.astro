@@ -1,0 +1,15 @@
+---
+const posts = await Astro.glob('../../../posts/**/*.md');
+
+import Page from '@/layouts/Page.astro';
+---
+
+<Page title="Aktuelles">
+	{
+		posts.map((post) => (
+			<div>
+				<h3 class="font-heading text-3xl">{post.frontmatter.title}</h3>
+			</div>
+		))
+	}
+</Page>
