@@ -26,14 +26,14 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 
 	<main style="margin-top: 150px;">
 		<div class="md:flex container mx-auto items-center">
-			<div class="max-w-2xl">
+			<div class="max-w-2xl p-5">
 				<h2 class="text-3xl font-heading mb-5">Schütze Dich und andere</h2>
 
-				<h1 class="text-5xl font-bold font-heading"><span class="text-impf">Impf</span> <span class="text-impf-2">Dich</span>.</h1>
+				<h1 class="text-6xl font-bold font-heading"><span class="text-impf">Impf</span> <span class="text-impf-2">Dich</span>.</h1>
 
 				<!-- <div class="text-xl">Mach mit bei der Impf-Initiative und helfe, die Verbreitung von Krankheiten zu stoppen. Impf Dich - für eine gesündere Zukunft!</div> -->
 
-				<div class="mt-10 flex gap-5">
+				<div class="mt-10 flex flex-col lg:flex-row gap-5">
 					<a href="/de/lokalgruppen/mitmachen" class="rounded bg-impf hover:bg-sky-600 text-white text-xl flex py-3 px-5 gap-2 items-center cursor-pointer">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"
 							><title>hand-wave-outline</title><path
@@ -55,13 +55,13 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 				</div>
 			</div>
 
-			<div class="md:ml-auto rounded-md lg:-mr-20 overflow-hidden md:overflow-visible border-gray-200 shadow-lg ease-in-out duration-500 rotate-1 hover:rotate-3">
+			<div class="hidden md:block md:ml-auto rounded-md lg:-mr-20 overflow-hidden md:overflow-visible border-gray-200 shadow-lg ease-in-out duration-500 rotate-1 hover:rotate-3">
 				<img src={schueler.src} class="object-cover w-[700px] h-[400px] rounded-md" />
 			</div>
 		</div>
 
-		<div class="container mx-auto mb-10 mt-14">
-			<div class="flex gap-5">
+		<div class="container mx-auto mb-10 mt-14 p-5">
+			<div class="flex flex-col md:flex-row gap-5">
 				<div class="flex-1 bg-gray-200 p-5 rounded-xl shadow-sm ease-in-out duration-500 hover:scale-105">
 					<h2 class="text-center text-2xl mb-3">Aufklären</h2>
 					<img src={fbox1.src} width={fbox1.width} height={fbox1.height} alt="Aufklären" />
@@ -94,12 +94,12 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 		</div>
 
 		<div class="bg-gray-700">
-			<div class="container mx-auto text-white pb-5">
+			<div class="container mx-auto text-white p-5">
 				<div class="flex flex-col md:flex-row">
 					<div class="flex-1 z-10">
 						<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
 						<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
-						<div class="grid grid-cols-5 gap-5 pr-10">
+						<div class="grid grid-cols-3 xl:grid-cols-4 gap-5 lg:pr-10">
 							{
 								lokalgruppen.map((lokalgruppe) => (
 									<a href={lokalgruppe.url} class="text-white text-center text-lg p-3 cursor-pointer bg-gray-500 opacity-90 rounded-lg hover:opacity-100">
@@ -110,7 +110,7 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 						</div>
 					</div>
 
-					<div id="lgmap" class="flex-1 rounded-xl" style="height: 450px; z-index: 0; width:100%;"></div>
+					<div id="lgmap" class="hidden lg:block flex-1 rounded-xl" style="height: 450px; z-index: 0; width:100%;"></div>
 				</div>
 
 				<div
@@ -163,17 +163,23 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 			</svg>
 		</div>
 
-		<div class="container mx-auto mb-10">
-			<h1 class="text-3xl font-heading mb-5">Engagieren</h1>
+		<div class="container mx-auto">
+			<div class="content mb-10 px-5">
+				<h1 class="text-3xl font-bold mb-5 font-heading">Instagram</h1>
+				<script>
+					fetch('http://localhost:8000/api/instagram/feed')
+						.then((r) => r.json())
+						.then((r) => {
+							console.log(r);
 
-			<div class="content mb-5">
-				<p>
-					Du studierst Medizin, Biologie, Pharmazie oder einen ähnlichen Studiengang? Du willst Dich ehrenamtlich engagieren und findest, dass Impfungen ein wichtiges Thema sind? Du bist ein*e
-					Teamplayer*in und arbeitest gerne mit Schüler*innen, Migrant*innen und anderen Studierenden? Dann bist du bei uns genau richtig!
-				</p><p>
-					Unsere Initiative findet derzeit nur an wenigen Fakultäten in Deutschland statt. Das wollen wir schleunigst ändern. Wenn Du Lust hast, Dich in unserem Netzwerk zu engagieren und eine
-					Lokalgruppe zu gründen, fülle bitte folgendes Formular aus. Wir nehmen den Kontakt zu Dir auf.
-				</p>
+							const container = document.querySelector('#ig-container')!;
+							for (let i = 0; i < r.length && i < 10; i++) {
+								const post = r[i];
+								container.innerHTML += `<div class="p-2"><a href="${post.permalink}" target="_blank"><img src="http://localhost:8000/instagram/image/${post.id}" alt="${post.caption}" class="rounded-lg"></a></div>`;
+							}
+						});
+				</script>
+				<div class="grid grid-cols-5 gap-5 items-center justify-center" id="ig-container"></div>
 			</div>
 		</div>
 	</main>
