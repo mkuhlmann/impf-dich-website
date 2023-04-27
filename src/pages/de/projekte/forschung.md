@@ -5,7 +5,7 @@ layout: '@/layouts/Page.astro'
 
 In Deutschland herrscht glücklicherweise eine relativ gute Impfquote durch die viele Infektionskrankheiten zurückgedrängt werden konnten. Trotzdem impfen wir noch nicht konsequent genug, um Krankheiten endgültig zurückzudrängen und zu eliminieren, so haben wir z.B. das Ziel der Eliminierung der Masern bis 2010 durch wiederholte Ausbrüche weit verfehlt. Wissenschaftsbasierte Impfempfehlungen, der Impfkalender und Impfpass, werden von vielen Patienten\*innen nicht vollständig verstanden, für Rückfragen bleibt bei kurzen Behandlungsterminen kaum Zeit -- Kommunikation findet nur in eine Richtung statt, notwendige Impfungen werden schlicht vergessen. Das wollen wir ändern.Um eine effektive Initiative für einen nachhaltig besseren Impfschutz zu starten, holen wir die Menschen an Ihrem Standpunkt ab und bilden eine Plattform für Rückfragen und Probleme. Als Teil des Gesundheitssystems wollen wir unserem eigenen Anspruch gerecht werden und unseren Teil beitragen, sowie unsere Rolle kritisch hinterfragen. Einen wichtigen Teil stellen wissenschaftliche Studien dar. Mit diesen unabhängigen Erhebungen wollen wir den Ursachen für eine geringe Impfbereitschaft nachgehen, Lösungen entwickeln und diese nachhaltig in das aktuelle Impfsystem implementieren. Im Folgenden haben wir die Studieninteressen unseres Vereins zusammengefasst:
 
-Bedeutung der studentischen Impfaufklärungs-Vorträge in Schulen („Impf Dich") - Erhebung des Impfwissens und der Impfbereitschaft (mit Fokus auf HPV)
+# Bedeutung der studentischen Impfaufklärungs-Vorträge in Schulen („Impf Dich") - Erhebung des Impfwissens und der Impfbereitschaft (mit Fokus auf HPV)
 
 Kernmaßnahmen unseres Vereins sind Aufklärungsveranstaltungen. Gerade in Deutschland, wo auf eine freiwillige Impfentscheidung gesetzt wird, sehen wir hierin die größte Chance junge Menschen zu erreichen. Trotz positiver Rückmeldungen von verschiedenen Seiten, evaluieren wir unsere Maßnahmen intern zur Qualitätssicherung und um möglichst effizient an nachhaltiger Aufklärung zu arbeiten. Deshalb werden unsere Vorträge und andere Aufklärungsveranstaltung in der Regel von wissenschaftlichen Erhebungen begleitet.
 
@@ -14,7 +14,7 @@ Durch die Lokalgruppenleiterin in Heidelberg wird aktuell eine Studie im Rahmer 
 Im Rahmen der Studie erhalten Schüler*innen der 8.-13. Klassenstufe zunächst einen Online-Fragebogen, um den aktuellen Stand der Impfbereitschaft und des Impfwissens zu ermitteln. Danach wird den Schüler*innen ein interaktiver Vortrag des Vereins für Impfaufklärung in der Schule präsentiert, der ihnen Hintergrundwissen über Impfungen und Immunologie vermitteln soll. Die Schüler\*innen werden dann gebeten einen zweiten und im Verlauf dritten Fragebogen auszufüllen. Ziel der Studie ist es zu zeigen, ob es einen Zusammenhang zwischen studentischer Impfaufklärung und der Impfbereitschaft sowie des Wissens über Impfungen bei Schülern gibt und, ob der Nutzen auch über einige Monate Bestand hat.\
 Der Ethik-Antrag an der Universität Heidelberg wurde angenommen und wir warten aktuell auf die Zusage der Bundesländer, um die Studie zu beginnen.
 
-Impfbereitschaft der Medizinstudierenden in Deutschland (COVRAM-Studie)
+# Impfbereitschaft der Medizinstudierenden in Deutschland (COVRAM-Studie)
 
 2021 wurde diese Umfrage auf Initiative von Simon Hennes aufgrund der unzureichenden Verfügbarkeit der COVID-19-Impfungen für die Medizinstudierenden im Praktischen Jahr, die Vollzeit in den deutschen Kliniken mit engen Patientenkontakt arbeiten, gestartet. Wir danken der Uni Erfurt (vgl. COSMO-Studie; <https://projekte.uni-erfurt.de/cosmo2020/web/>) und dem Communication Lab Erfurt (<https://communicationlab-erfurt.de/>) für Feedback und Input zum Fragebogen und der Vorgehensweise.\
 Nahezu alle Fachschaften und Dekanate der medizinischen Fakultäten in Deutschland wurden kontaktiert, um den Online-Fragebogen an möglichst alle Medizinstudierende verteilen zu können. Insgesamt konnten 4313 Medizinstudierende aus ganz Deutschland eingeschlossen werden.\
@@ -26,7 +26,7 @@ Weitere Ergebnisse wurde auf der 7. Nationalen Impfkonferenz in Wiesbaden vorges
 
 Eine zweite COVRAM-Studie wurde 2022 durchgeführt und es konnten über 3000 Medizinstudierende aus ganz Deutschland eingeschlossen werden. Die Ergebnisse der ersten Studie wurden noch bestätigt.
 
-Lehrforschung
+# Lehrforschung
 
 Innerhalb der COVRAM-Studie wurde ein „Needs Assessment" (Bedarfs-Beurteilung) der Lehre an Medizinischen Fakultäten bzgl. der Themen „Impfungen, Impfaufklärung und Umgang mit Impfskepsis" durchgeführt. Es zeigte sich besonders großer Bedarf bei der Lehre zum Umgang mit Impfskepsis.\
 Fast 80% der Befragten gaben an, dass sie andere über COVID-19 und entsprechende Impfungen aufklären und es gaben 75% der Medizinstudierenden an, dass sie sich dafür verantwortlich fühlten. Die Mehrheit der Studierenden waren nicht zufrieden mit der Lehre bzgl. des Umgangs mit Impfskepsis und der Kommunikationsstrategien. Die Autoren der Studie empfehlen praktische Impflehre insb. Bzgl. Kommunikationsskills. Die Ergebnisse dieser Teilstudie finden sie hier: [10.3390/vaccines10060975](https://doi.org/10.3390/vaccines10060975)\

@@ -12,7 +12,7 @@
 	}
 
 	p {
-		@apply my-2;
+		@apply my-3;
 	}
 
 	ul {
@@ -39,4 +39,14 @@ a.link {
 
 .tw-input {
 	@apply border border-gray-300 rounded-lg p-2 focus:border-impf focus:ring-impf;
+}
+
+.info-table {
+	tr {
+		@apply border-t-2 border-gray-100;
+	}
+	th,
+	td {
+		@apply text-left py-2 px-2;
+	}
 }
