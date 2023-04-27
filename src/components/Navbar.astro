@@ -4,31 +4,163 @@ export interface Props {
 }
 
 const { rounded = true } = Astro.props as Props;
+
+type MenuDefinition = {
+	items: MenuItem[];
+};
+
+type MenuItem = {
+	title: string;
+	to?: string;
+	items?: MenuItem[];
+};
+
+const menuItems: MenuDefinition = {
+	items: [
+		{
+			title: 'Verein',
+			to: '/de/verein/ueber-uns',
+			items: [
+				{
+					title: 'Über uns',
+					to: '/de/verein/ueber-uns',
+				},
+				{
+					title: 'Preise / Auszeichnungen',
+					to: '/de/verein/preise',
+				},
+				{
+					title: 'Förderungswürdigkeit',
+					to: '/de/verein/foerderungswuerdigkeit',
+				},
+				{
+					title: '🠆 Engagieren!',
+					to: '/de/lokalgruppen/mitmachen',
+				},
+			],
+		},
+		{
+			title: 'Projekte',
+			to: '/de/verein/ueber-uns',
+			items: [
+				{
+					title: 'Über uns',
+					to: '/de/verein/ueber-uns',
+				},
+				{
+					title: 'Preise / Auszeichnungen',
+					to: '/de/verein/preise',
+				},
+				{
+					title: 'Förderungswürdigkeit',
+					to: '/de/verein/foerderungswuerdigkeit',
+				},
+				{
+					title: '🠆 Engagieren!',
+					to: '/de/lokalgruppen/mitmachen',
+				},
+			],
+		},
+		{
+			title: 'Lokalgruppen',
+			to: '/#lokalgruppen',
+		},
+	],
+};
 ---
 
 <div class="w-full absolute top-0">
 	<div class={'container mx-auto bg-white px-5 shadow-md' + (rounded ? ' md:rounded-b-md' : '')} style="z-index: 1000;">
-		<nav class="md:flex gap-5 items-center">
-			<a href="/" class="flex-start py-2 mr-2">
-				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="240" />
+		<div class="flex font-roboto items-center tracking-wide">
+			<a href="/" class="flex-start py-2 mr-6">
+				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />
 			</a>
-			<a href="/de/verein">Verein</a>
+			<button class="md:hidden rounded-lg ml-auto focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
+				<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+					<path
+						id="menuClosedCaret"
+						fill-rule="evenodd"
+						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+						clip-rule="evenodd"></path>
+					<path
+						id="menuOpenCaret"
+						class="hidden"
+						fill-rule="evenodd"
+						d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
 
-			<a href="/">Lokalgruppen</a>
-			<a href="/">Projekte</a>
-			<a href="/">Wissen</a>
+			<nav class="flex-1 hidden md:flex flex-col md:flex-row items-center justify-between">
+				<div class="flex">
+					{
+						menuItems.items.map((item) => {
+							if (!item.items || item.items.length == 0) {
+								return (
+									<a class="navbar-item" href={item.to}>
+										{item.title}
+									</a>
+								);
+							} else {
+								return (
+									<div class="navbar-item-dropdown relative">
+										<div class="navbar-item">
+											<span>{item.title}</span>
+											<svg fill="currentColor" viewBox="0 0 20 20" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 text-impf">
+												<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+											</svg>
+										</div>
+										<div class="absolute navbar-dropdown w-full origin-top-left rounded-md shadow-md md:w-64">
+											<div class="py-2 bg-white rounded-md shadow">
+												{item.items?.map((subitem) => (
+													<a href={subitem.to} class="navbar-dropdown-item">
+														{subitem.title}
+													</a>
+												))}
+											</div>
+										</div>
+									</div>
+								);
+							}
+						})
+					}
+				</div>
+				<div>
+					<a href="/de/meta/unterstuetzen" class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+							<path
+								d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+							></path>
+						</svg>
 
-			<div class="ml-auto">
-				<a href="/de/meta/unterstuetzen" class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-						<path
-							d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
-						></path>
-					</svg>
-
-					Unterstützen
-				</a>
-			</div>
-		</nav>
+						Unterstützen
+					</a>
+				</div>
+			</nav>
+		</div>
 	</div>
 </div>
+
+<style lang="scss">
+	.navbar-item {
+		@apply hover:text-impf transition-colors px-6 py-5 hover:bg-gray-100 cursor-pointer;
+	}
+
+	.navbar-item-dropdown:hover svg {
+		transform: rotate(180deg);
+	}
+
+	.navbar-item-dropdown:hover .navbar-dropdown,
+	.navbar-dropdown:hover {
+		display: block;
+	}
+
+	.navbar-dropdown {
+		display: none;
+		z-index: 1000;
+	}
+
+	.navbar-dropdown-item {
+		@apply block px-4 py-2 text-sm bg-transparent text-gray-900 hover:text-impf  hover:bg-gray-100 focus:bg-gray-200 focus:outline-none;
+	}
+</style>

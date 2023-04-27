@@ -4,13 +4,12 @@ import Card from '../components/Card.astro';
 import Footer from '@/components/Footer.astro';
 import 'leaflet/dist/leaflet.css';
 import Navbar from '@/components/Navbar.astro';
+import Lokalgruppen from '@/components/Lokalgruppen.astro';
 
 import fbox1 from '../assets/fbox-1.jpg';
 import fbox2 from '../assets/fbox-2.jpg';
 import fbox3 from '../assets/fbox-3.jpg';
 import schueler from '@/assets/schueler.jpg';
-
-const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 ---
 
 <Layout title="Home">
@@ -94,66 +93,8 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 		</div>
 
 		<div class="bg-gray-700">
-			<div class="container mx-auto text-white p-5">
-				<div class="flex flex-col md:flex-row">
-					<div class="flex-1 z-10">
-						<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
-						<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
-						<div class="grid grid-cols-3 xl:grid-cols-4 gap-5 lg:pr-10">
-							{
-								lokalgruppen.map((lokalgruppe) => (
-									<a href={lokalgruppe.url} class="text-white text-center text-lg p-3 cursor-pointer bg-gray-500 opacity-90 rounded-lg hover:opacity-100">
-										{lokalgruppe.frontmatter.title}
-									</a>
-								))
-							}
-						</div>
-					</div>
-
-					<div id="lgmap" class="hidden lg:block flex-1 rounded-xl" style="height: 450px; z-index: 0; width:100%;"></div>
-				</div>
-
-				<div
-					id="lglokal"
-					class="hidden"
-					set:html={JSON.stringify(
-						lokalgruppen.map((lokalgruppe) => {
-							return {
-								name: lokalgruppe.frontmatter.title,
-								href: lokalgruppe.url,
-								coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
-							};
-						})
-					)}
-				/>
-
-				<script>
-					/* @ts-ignore */
-					import * as L from 'leaflet';
-
-					var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
-
-					L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-						attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-					}).addTo(map);
-
-					var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
-
-					// async function geocode(city, apiKey) {
-					// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
-
-					// 	if (!json || !json.results.length > 0) {
-					// 		console.error('error geocoding city: ' + city);
-					// 	}
-					// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
-					// }
-
-					lokalgruppen.forEach(function (lokalgruppe: any) {
-						L.marker(lokalgruppe.coords)
-							.addTo(map)
-							.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
-					});
-				</script>
+			<div class="container mx-auto text-white p-5" id="lokalgruppen">
+				<Lokalgruppen />
 			</div>
 		</div>
 
@@ -165,21 +106,31 @@ const lokalgruppen = await Astro.glob('./de/lokalgruppen/*.md');
 
 		<div class="container mx-auto">
 			<div class="content mb-10 px-5">
-				<h1 class="text-3xl font-bold mb-5 font-heading">Instagram</h1>
 				<script>
-					fetch('http://localhost:8000/api/instagram/feed')
+					fetch('https://app.impf-dich.org/api/instagram/feed')
 						.then((r) => r.json())
 						.then((r) => {
-							console.log(r);
-
 							const container = document.querySelector('#ig-container')!;
+							container.innerHTML = '';
 							for (let i = 0; i < r.length && i < 10; i++) {
 								const post = r[i];
-								container.innerHTML += `<div class="p-2"><a href="${post.permalink}" target="_blank"><img src="http://localhost:8000/instagram/image/${post.id}" alt="${post.caption}" class="rounded-lg"></a></div>`;
+								container.innerHTML += `<div class="p-2"><a href="${post.permalink}" target="_blank"><img src="https://app.impf-dich.org/instagram/image/${post.id}" alt="${post.caption}" class="rounded-lg"></a></div>`;
 							}
 						});
 				</script>
-				<div class="grid grid-cols-5 gap-5 items-center justify-center" id="ig-container"></div>
+				<div class="grid grid-cols-5 gap-5 items-center justify-center min-h-[500px]" id="ig-container">
+					<div role="status">
+						<svg aria-hidden="true" class="inline w-16 h-16 mr-2 text-gray-200 animate-spin fill-impf" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+								fill="currentColor"></path>
+							<path
+								d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+								fill="currentFill"></path>
+						</svg>
+						<span class="sr-only">Loading...</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>

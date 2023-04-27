@@ -1,0 +1,63 @@
+---
+const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
+---
+
+<div class="flex flex-col md:flex-row">
+	<div class="flex-1 z-10">
+		<h2 class="text-gray-200">Aufklärung in der Nähe</h2>
+		<h1 class="text-3xl font-bold mb-5 heading">Lokalgruppen</h1>
+		<div class="grid grid-cols-3 xl:grid-cols-4 gap-5 lg:pr-10">
+			{
+				lokalgruppen.map((lokalgruppe) => (
+					<a href={lokalgruppe.url} class="text-white text-center text-lg p-3 cursor-pointer bg-gray-500 opacity-90 rounded-lg hover:opacity-100">
+						{lokalgruppe.frontmatter.title}
+					</a>
+				))
+			}
+		</div>
+	</div>
+
+	<div id="lgmap" class="hidden lg:block flex-1 rounded-xl" style="height: 450px; z-index: 0; width:100%;"></div>
+</div>
+
+<div
+	id="lglokal"
+	class="hidden"
+	set:html={JSON.stringify(
+		lokalgruppen.map((lokalgruppe) => {
+			return {
+				name: lokalgruppe.frontmatter.title,
+				href: lokalgruppe.url,
+				coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
+			};
+		})
+	)}
+/>
+
+<script>
+	/* @ts-ignore */
+	import * as L from 'leaflet';
+
+	var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	}).addTo(map);
+
+	var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
+
+	// async function geocode(city, apiKey) {
+	// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
+
+	// 	if (!json || !json.results.length > 0) {
+	// 		console.error('error geocoding city: ' + city);
+	// 	}
+	// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
+	// }
+
+	lokalgruppen.forEach(function (lokalgruppe: any) {
+		L.marker(lokalgruppe.coords)
+			.addTo(map)
+			.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
+	});
+</script>

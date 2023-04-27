@@ -10,6 +10,9 @@ module.exports = {
 			},
 			fontFamily: {
 				heading: ['Raleway', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+				raleway: ['Raleway', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+				inter: ['Inter', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+				roboto: ['Roboto', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
 			},
 		},
 	},
