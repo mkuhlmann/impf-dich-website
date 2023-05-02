@@ -1,18 +1,21 @@
 ---
-export async function getStaticPaths() {
-	const posts = await Astro.glob('../../../posts/**/*.md');
+import { getCollection } from 'astro:content';
 
-	return posts.map((post) => ({
+export async function getStaticPaths() {
+	const posts = await getCollection('news');
+
+	return posts.map((entry) => ({
 		params: {
-			slug: post.frontmatter.slug,
+			slug: entry.slug,
 		},
 		props: {
-			post,
+			entry,
 		},
 	}));
 }
 
-const { Content } = Astro.props.post;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
 
 <Content />

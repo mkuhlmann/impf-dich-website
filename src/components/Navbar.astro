@@ -26,6 +26,10 @@ const menuItems: MenuDefinition = {
 					to: '/de/verein/ueber-uns',
 				},
 				{
+					title: 'Archiv',
+					to: '/de/news',
+				},
+				{
 					title: 'Preise / Auszeichnungen',
 					to: '/de/verein/preise',
 				},
@@ -51,18 +55,26 @@ const menuItems: MenuDefinition = {
 					title: 'Forschung',
 					to: '/de/projekte/forschung',
 				},
+				{
+					title: 'Podcast',
+					to: '/de/projekte/podcast',
+				},
 			],
 		},
 		{
 			title: 'Lokalgruppen',
 			to: '/#lokalgruppen',
 		},
+		{
+			title: 'Wissen',
+			to: '/de/wissen',
+		},
 	],
 };
 ---
 
 <div class="w-full absolute top-0">
-	<div class={'container mx-auto bg-white px-5 shadow-md' + (rounded ? ' md:rounded-b-md' : '')} style="z-index: 1000;">
+	<div class={'container mx-auto border-impf border-t-8 bg-white px-5 shadow-md' + (rounded ? ' md:rounded-b-md' : '')} style="z-index: 1000;">
 		<div class="flex font-roboto items-center tracking-wide">
 			<a href="/" class="flex-start py-2 mr-6">
 				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />

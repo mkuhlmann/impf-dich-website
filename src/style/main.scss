@@ -12,7 +12,7 @@
 	}
 
 	p {
-		@apply my-3;
+		@apply my-3 leading-6;
 	}
 
 	ul {
@@ -25,6 +25,10 @@
 
 	hr {
 		@apply my-5;
+	}
+
+	blockquote {
+		@apply border-l-4 border-impf p-2 pl-5 my-5 bg-gray-100;
 	}
 }
 

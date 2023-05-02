@@ -1,0 +1,13 @@
+{
+    "name": "Impf Dich",
+    "icons": [
+        {
+            "src": "/_Resources/Static/Packages/mkuhlmann.ImpfDich/Assets/favicon/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

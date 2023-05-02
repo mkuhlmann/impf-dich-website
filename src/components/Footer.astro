@@ -1,8 +1,10 @@
 ---
-const posts = await Astro.glob('/src/posts/**/*.md');
+import { getCollection } from 'astro:content';
+
+const newsCollection = await getCollection('news');
 
 // limit to 5 posts
-const postsToShow = posts.slice(0, 5);
+const newsToShow = newsCollection.slice(0, 5);
 ---
 
 <footer class="footer bg-gray-700 text-white border-t-impf border-t-8">
@@ -43,10 +45,10 @@ const postsToShow = posts.slice(0, 5);
 
 			<ul class="mb-4">
 				{
-					postsToShow.map((post) => (
+					newsToShow.map((entry) => (
 						<li>
-							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + post.frontmatter.slug} class="block mb-2">
-								{post.frontmatter.title}
+							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + entry.slug} class="block mb-2">
+								{entry.data.title}
 							</a>
 						</li>
 					))

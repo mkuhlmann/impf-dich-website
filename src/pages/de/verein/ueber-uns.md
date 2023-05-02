@@ -1,6 +1,7 @@
 ---
 title: Über uns
 layout: '@/layouts/Page.astro'
+heroImage: '@/assets/2021-bundestreffen-berlin-hero.jpg'
 ---
 
 Die Initiative Impfaufklärung in Deutschland e.V. ("Impf Dich") ist ein Netzwerk aus vorwiegend Medizinstudierenden und Studierenden fachnaher Disziplinen sowie jungen Ärztinnen und Ärzten, das zum Ende des Jahres 2017 in Bonn gegründet wurde. Ursprünglich bestehend aus Studierenden der Medizinischen Fakultät der Rheinischen Friedrich-Wilhelms-Universität zu Bonn gehören dem Team heute ehrenamtliche Impfbotschafter*innen aus verschiedenen Fakultäten in ganz Deutschland an. Auch Professor*innen, Ärztinnen und Ärzte und Apotheker\*innen haben sich unserem Netzwerk für mehr Impfbereitschaft angeschlossen und unterstützen den Verein. Dabei legen wir gesonderten Wert auf die Offenheit unseres Netzwerk, in das sich jedes Mitglied mit seinen individuellen Fähigkeiten und Hintergründen einbringen kann. Diese Pluridisziplinarität ermöglicht multimodale und effiziente Herangehensweisen an unsere Aufgaben und garantiert regen Austausch im Verein. Seit Dezember 2021 ergänzt Lucas Phillip Reindl, ebenfalls aus dem Kreis Bonn den Vorstand. Simon Hennes, der seit 2020 Teil des Vorstandes ist hat den Vorstandsvorsitz von Gründer Steffen Künzel übernommen.

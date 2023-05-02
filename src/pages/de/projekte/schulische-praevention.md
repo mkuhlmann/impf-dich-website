@@ -6,15 +6,13 @@ layout: '@/layouts/Page.astro'
 <div class="flex gap-7">
 <div class="flex-1">
 
-### "Immunsystem, Infektion, Impfung: Informationen!"
+# "Immunsystem, Infektion, Impfung: Informationen!"
 
 Mit unserem Schulprojekt wollen wir vor allem Jugendliche ansprechen, die zeitnah vor ihrer ersten eigenen Impfentscheidung stehen werden. Die interaktive Lerneinheit ist für zwei Schulstunden ausgelegt und vermittelt Wissen rund um Infektionskrankheiten, Immunologie und natürlich Impfungen.
 
 Ein Fokus wird dabei insbesondere auf für die Schüler\*innen relevante Impfungen wie HPV gelegt. Selbstverständlich gehen wir auch auf die COVID-19 Impfungen ein.
 
-Die Schulvorträge werden meist von zwei bis drei speziell ausgebildeten Medizinstudierenden unseres Netzwerks durchgeführt. Die zahlreichen [Lokalgruppen](https://impf-dich.org/de/lokalgruppen/uebersicht) sind an vielen Fakultäten --- bestimmt auch in Ihrer Nähe. Nehmen Sie gerne über die Lokalgruppenseite direkt Kontakt auf.
-
-_Auch während der Coronapandemie bieten wir Online basierte Schulvorträge an._
+Die Schulvorträge werden meist von zwei bis drei speziell ausgebildeten Medizinstudierenden unseres Netzwerks durchgeführt. Die zahlreichen Lokalgruppen sind an vielen Fakultäten &mdash; bestimmt auch in Ihrer Nähe. Nehmen Sie gerne über die [Lokalgruppenseite](/#lokalgruppen) direkt Kontakt auf.
 
 </div>
 
@@ -67,3 +65,5 @@ _Auch während der Coronapandemie bieten wir Online basierte Schulvorträge an._
 </div>
 
 </div>
+
+<div style="height: 300px; background-size: cover; background-position: center; background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 20%, rgba(255,255,255,0)), url(https://impf-dich.org/_Resources/Persistent/0/8/b/a/08ba4ce2309a13bf842815bd774359d7216e65cc/heidelberg-19-schulen-teaser.jpg); margin: 0 -1.25em -1.25em -1.25em;"></div>

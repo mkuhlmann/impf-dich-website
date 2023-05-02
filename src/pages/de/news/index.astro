@@ -1,14 +1,16 @@
 ---
-const posts = await Astro.glob('../../../posts/**/*.md');
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('news');
 
 import Page from '@/layouts/Page.astro';
 ---
 
 <Page title="Aktuelles">
 	{
-		posts.map((post) => (
+		posts.map((entry) => (
 			<div>
-				<h3 class="font-heading text-3xl">{post.frontmatter.title}</h3>
+				<h3 class="font-heading text-3xl">{entry.data.title}</h3>
 			</div>
 		))
 	}
