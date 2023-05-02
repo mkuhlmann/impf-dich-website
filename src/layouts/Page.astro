@@ -3,39 +3,14 @@ import Navbar from '@/components/Navbar.astro';
 import Layout from './Layout.astro';
 import Footer from '@/components/Footer.astro';
 import path from 'path';
-import { Image } from 'astro:assets';
-
-function dynamicViteAssetImport(imageFileName: string) {
-	const filename = path.parse(imageFileName);
-	const name = filename.name;
-	const ext = filename.ext;
-	switch (ext) {
-		case '.webp':
-			return import(`../assets/${name}.webp`);
-		case '.jpg':
-			return import(`../assets/${name}.jpg`);
-		case '.png':
-			return import(`../assets/${name}.png`);
-		case '.svg':
-			return import(`../assets/${name}.svg`);
-		case '.gif':
-			return import(`../assets/${name}.gif`);
-		case '.avif':
-			return import(`../assets/${name}.avif`);
-		case '.jpeg':
-			return import(`../assets/${name}.jpeg`);
-		default:
-			return import(`../assets/${name}.jpg`);
-	}
-}
-
+import { Img } from 'astro-imagetools/components';
 const { content } = Astro.props;
 
-let heroImagePath: string = '';
-let heroImage = null;
+let heroImagePath = null;
 
 if (content && content.heroImage) {
 	const file: string = Astro.props.file;
+	// get directory path of file
 	const dir = file.substring(0, file.lastIndexOf('/'));
 
 	heroImagePath = content.heroImage;
@@ -43,10 +18,10 @@ if (content && content.heroImage) {
 	if (!heroImagePath.startsWith('@')) {
 		heroImagePath = dir + '/' + heroImagePath;
 	} else {
-		heroImagePath = '..' + heroImagePath.substring(1);
+		heroImagePath = path.resolve(process.cwd() + '/src' + heroImagePath.substring(1));
 	}
 
-	heroImage = (await import(/* @vite-ignore */ heroImagePath)).default;
+	console.log(`heroImagePath: ${heroImagePath}`);
 }
 
 const { title } = Astro.props.frontmatter || Astro.props;
@@ -59,7 +34,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		heroImagePath && (
 			<div class="bg-gray-700" style=" z-index: -100;">
 				<div class="container mx-auto flex justify-center" style="padding-top: 75px;">
-					<Image src={heroImage} alt="Hero Image" />
+					<Img src={heroImagePath} alt="Hero Image" />
 				</div>
 			</div>
 		)
