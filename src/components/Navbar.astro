@@ -3,6 +3,8 @@ export interface Props {
 	rounded?: boolean;
 }
 
+const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
+
 const { rounded = true } = Astro.props as Props;
 
 type MenuDefinition = {
@@ -64,6 +66,10 @@ const menuItems: MenuDefinition = {
 		{
 			title: 'Lokalgruppen',
 			to: '/#lokalgruppen',
+			items: lokalgruppen.map((lokalgruppe) => ({
+				title: lokalgruppe.frontmatter.title,
+				to: lokalgruppe.url,
+			})),
 		},
 		{
 			title: 'Wissen',
@@ -74,12 +80,12 @@ const menuItems: MenuDefinition = {
 ---
 
 <div class="w-full absolute top-0">
-	<div class={'container mx-auto border-impf border-t-8 bg-white px-5 shadow-md' + (rounded ? ' md:rounded-b-md' : '')} style="z-index: 1000;">
+	<div class={'container mx-auto border-impf border-t-8 bg-white px-5 shadow-md' + (rounded ? ' lg:rounded-b-md' : '')} style="z-index: 1000;">
 		<div class="flex font-roboto items-center tracking-wide">
 			<a href="/" class="flex-start py-2 mr-6">
 				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />
 			</a>
-			<button class="md:hidden rounded-lg ml-auto focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
+			<button class="lg:hidden rounded-lg ml-auto focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
 				<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
 					<path
 						id="menuClosedCaret"
@@ -95,7 +101,7 @@ const menuItems: MenuDefinition = {
 				</svg>
 			</button>
 
-			<nav class="flex-1 hidden md:flex flex-col md:flex-row items-center justify-between">
+			<nav class="flex-1 hidden lg:flex flex-col lg:flex-row items-center justify-between">
 				<div class="flex">
 					{
 						menuItems.items.map((item) => {
@@ -110,11 +116,11 @@ const menuItems: MenuDefinition = {
 									<div class="navbar-item-dropdown relative">
 										<div class="navbar-item">
 											<span>{item.title}</span>
-											<svg fill="currentColor" viewBox="0 0 20 20" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 text-impf">
+											<svg fill="currentColor" viewBox="0 0 20 20" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform lg:-mt-1 text-impf">
 												<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
 											</svg>
 										</div>
-										<div class="absolute navbar-dropdown w-full origin-top-left rounded-md shadow-md md:w-64">
+										<div class="absolute navbar-dropdown w-full origin-top-left rounded-md shadow-md lg:w-64">
 											<div class="py-2 bg-white rounded-md shadow">
 												{item.items?.map((subitem) => (
 													<a href={subitem.to} class="navbar-dropdown-item">

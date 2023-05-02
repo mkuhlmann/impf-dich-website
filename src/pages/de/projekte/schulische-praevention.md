@@ -3,7 +3,7 @@ title: Schulische Prävention
 layout: '@/layouts/Page.astro'
 ---
 
-<div class="flex gap-7">
+<div class="flex flex-col lg:flex-row gap-7">
 <div class="flex-1">
 
 # "Immunsystem, Infektion, Impfung: Informationen!"

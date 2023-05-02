@@ -5,6 +5,7 @@ import Footer from '@/components/Footer.astro';
 import 'leaflet/dist/leaflet.css';
 import Navbar from '@/components/Navbar.astro';
 import Lokalgruppen from '@/components/Lokalgruppen.astro';
+import { Image } from 'astro:assets';
 
 import fbox1 from '../assets/fbox-1.jpg';
 import fbox2 from '../assets/fbox-2.jpg';
@@ -55,7 +56,7 @@ import schueler from '@/assets/schueler.jpg';
 			</div>
 
 			<div class="hidden md:block md:ml-auto rounded-md lg:-mr-20 overflow-hidden md:overflow-visible border-gray-200 shadow-lg ease-in-out duration-500 rotate-1 hover:rotate-3">
-				<img src={schueler.src} class="object-cover w-[700px] h-[400px] rounded-md" />
+				<Image src={schueler} alt="Schüler bei Impf Dich Vortrag" class="object-cover w-[700px] h-[400px] rounded-md" />
 			</div>
 		</div>
 
