@@ -81,28 +81,30 @@ const menuItems: MenuDefinition = {
 
 <div class="w-full absolute top-0">
 	<div class={'container mx-auto border-impf border-t-8 bg-white px-5 shadow-md' + (rounded ? ' lg:rounded-b-md' : '')} style="z-index: 1000;">
-		<div class="flex font-roboto items-center tracking-wide">
-			<a href="/" class="flex-start py-2 mr-6">
-				<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />
-			</a>
-			<button class="lg:hidden rounded-lg ml-auto focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
-				<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-					<path
-						id="menuClosedCaret"
-						fill-rule="evenodd"
-						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-						clip-rule="evenodd"></path>
-					<path
-						id="menuOpenCaret"
-						class="hidden"
-						fill-rule="evenodd"
-						d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-						clip-rule="evenodd"></path>
-				</svg>
-			</button>
+		<div class="flex flex-col lg:flex-row font-roboto">
+			<div class="grow lg:grow-0 flex justify-between">
+				<a href="/" class="grow py-2 mr-6">
+					<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />
+				</a>
+				<button class="block lg:hidden rounded-lg focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
+					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+						<path
+							id="menuClosedCaret"
+							fill-rule="evenodd"
+							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+							clip-rule="evenodd"></path>
+						<path
+							id="menuOpenCaret"
+							class="hidden"
+							fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
 
-			<nav class="flex-1 hidden lg:flex flex-col lg:flex-row items-center justify-between">
-				<div class="flex">
+			<nav class="grow hidden lg:flex flex-col lg:flex-row items-center justify-between menu-toggle">
+				<div class="flex flex-col lg:flex-row">
 					{
 						menuItems.items.map((item) => {
 							if (!item.items || item.items.length == 0) {
@@ -120,7 +122,7 @@ const menuItems: MenuDefinition = {
 												<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
 											</svg>
 										</div>
-										<div class="absolute navbar-dropdown w-full origin-top-left rounded-md shadow-md lg:w-64">
+										<div class="lg:absolute navbar-dropdown w-full origin-top-left rounded-md shadow-md lg:w-64">
 											<div class="py-2 bg-white rounded-md shadow">
 												{item.items?.map((subitem) => (
 													<a href={subitem.to} class="navbar-dropdown-item">
@@ -136,7 +138,7 @@ const menuItems: MenuDefinition = {
 					}
 				</div>
 				<div>
-					<a href="/de/meta/unterstuetzen" class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer">
+					<a href="/de/meta/unterstuetzen" class="rounded bg-impf hover:bg-sky-600 text-white py-2 px-4 flex gap-2 items-center cursor-pointer my-4 lg:my-0">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
 							<path
 								d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
@@ -150,6 +152,30 @@ const menuItems: MenuDefinition = {
 		</div>
 	</div>
 </div>
+
+<script is:inline>
+	let menuState = false;
+	const toggle = document.querySelectorAll('.menu-toggle');
+	const menuOpenCaret = document.querySelector('#menuOpenCaret');
+	const menuClosedCaret = document.querySelector('#menuClosedCaret');
+
+	function toggleMenu() {
+		menuState = !menuState;
+		if (menuState) {
+			menuOpenCaret.classList.remove('hidden');
+			menuClosedCaret.classList.add('hidden');
+			toggle.forEach((el) => {
+				el.classList.remove('hidden');
+			});
+		} else {
+			menuOpenCaret.classList.add('hidden');
+			menuClosedCaret.classList.remove('hidden');
+			toggle.forEach((el) => {
+				el.classList.add('hidden');
+			});
+		}
+	}
+</script>
 
 <style lang="scss">
 	.navbar-item {
