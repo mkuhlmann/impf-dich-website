@@ -1,5 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
+import 'dayjs/locale/de';
+dayjs.locale('de');
 
 const posts = await getCollection('news');
 
@@ -9,8 +12,15 @@ import Page from '@/layouts/Page.astro';
 <Page title="Aktuelles">
 	{
 		posts.map((entry) => (
-			<div>
-				<h3 class="font-heading text-3xl">{entry.data.title}</h3>
+			<div class="my-5">
+				<p class="text-sm text-gray-500">{dayjs(entry.data.publishedAt).format('DD. MMMM, YYYY')}</p>
+				<a href={'/de/news/' + entry.slug} class="font-heading block mb-3 text-3xl cursor-poitner text-impf hover:text-impfhover">
+					{entry.data.title}
+				</a>
+				<p>{entry.body.replace(/^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} #{0,}(\n)?\s{0,}$/gm, '$1$2$3').substring(0, 800)}</p>
+				<a href={'/de/news/' + entry.slug} class="text-blue-500 hover:text-blue-700">
+					Weiterlesen &raquo;
+				</a>
 			</div>
 		))
 	}

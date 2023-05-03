@@ -3,15 +3,15 @@ title: Vorstandsvorsitzender Simon Hennes im "ÄrzteTag" - Podcast
 layout: '@/layouts/Page.astro'
 heroImage: Simon-Hennes-ist-Medizinstudent-und-Vorstandsvorsitzender-202664h.jpg
 slug: vorstandsvorsitzender-simon-hennes-im-aerztetag-podcast
+publishedAt: 2022-03-25
 ---
 
-Was läuft im Moment hinter den Kulissen von Impf Dich ab?
+### Impfaufklärung im Klassenzimmer - wieso lohnt sich das, Simon Hennes? 
 
-Im Rahmen der 7. Nationalen Impfkonferenz in Wiesbaden erhielt Vorstandsvorsitzender Simon Hennes die Möglichkeit die Initiative "Impf Dich" in Form eines Posters-Vortrags vorzustellen, was sehr positiv aufgenommen wurde.
-"Impf Dich" wurde infolgedessen mit dem Förderpreis 2022 der Stiftung Kinder.Gesundheit.Mainz ausgezeichnet.
+Um diese Frage dreht sich die neue Folge des Podcasts "ÄrzteTag" des Springer Verlags, zu der Simon Hennes als Gastredner eingeladen wurde.
 
-Darüber hinaus ermöglichte die Konferenz einen offenen Austausch mit Mitarbeitern des Robert Koch-Instituts und Mitgliedern der STIKO. Die Experten sind überzeugt von der Relevanz unserer Aufklärungsarbeit und von verschiedener Seite wurde uns Unterstützung zugesprochen.
+Die Aufklärung über Impfungen in Schulen ist unser Kernprojekt und ist nach wie vor unser Ansatz um eine flächendeckende unabhängige Impfaufklärung ermöglichen zu können. In dem Podcast wurde unser Vorstandsvorsitzende unter Anderem dazu befragt, wie man Schüler\*innen aus bildungsferneren Familien erreichen kann, wie die Impfaufklärung von den Schülern aufgenommen wird und warum wir gerade bei der jungen Generation mit Aufklärung ansetzen wollen.
 
-Von der Kooperation mit anderen wissenschaftlichen Organisationen kann Impf Dich profitieren was unsere Projekte und unsere Aufklärung vorantreibt.
+Den Podcast findet ihr bei der [ÄrzteZeitung.](https://www.aerztezeitung.de/Podcasts/Impfaufklaerung-im-Klassenzimmer-wieso-lohnt-sich-das-Simon-Hennes-427669.html)
 
-Einen Artikel in der Ärztezeitung über die vorgestellten Projekte von Impf Dich auf der Nationalen Impfkonferenz findet ihr über den Link in unserer Bio.
+Viel Spaß beim Hören

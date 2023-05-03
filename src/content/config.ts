@@ -4,6 +4,7 @@ const newsCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		author: z.string().default('Impf Dich'),
+		publishedAt: z.date().optional(),
 	}),
 });
 

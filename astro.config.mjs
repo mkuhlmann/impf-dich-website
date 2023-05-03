@@ -1,13 +1,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { astroImageTools } from 'astro-imagetools';
+import mdx from '@astrojs/mdx';
 
-import mdx from "@astrojs/mdx";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), astroImageTools, mdx()],
-  experimental: {
-    assets: true
-  }
+	site: 'https://impf-dich.org',
+	integrations: [tailwind(), astroImageTools, mdx(), sitemap()],
+	experimental: {
+		assets: true,
+	},
 });

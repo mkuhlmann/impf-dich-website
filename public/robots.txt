@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://impf-dich.org/sitemap-index.xml
