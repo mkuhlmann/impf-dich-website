@@ -19,7 +19,15 @@
 		@apply list-disc;
 
 		li {
-			@apply ml-4 my-2;
+			@apply ml-10 my-2;
+		}
+	}
+
+	ol {
+		@apply list-decimal;
+
+		li {
+			@apply ml-10 my-2;
 		}
 	}
 
