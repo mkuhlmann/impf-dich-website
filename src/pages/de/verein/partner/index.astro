@@ -1,0 +1,18 @@
+---
+import Page from '@/layouts/Page.astro';
+interface Frontmatter {
+    name: string;
+    url: string;
+}
+const partners = await Astro.glob<Frontmatter>('./partners/*.md');
+---
+
+---<Page title="Partner">
+    {
+        partners.map((partner) => (
+            <>
+                <h1> {partner.frontmatter.name} </h1>
+            </>
+        ))
+    }
+</Page>---

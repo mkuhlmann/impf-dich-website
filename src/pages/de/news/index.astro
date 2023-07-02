@@ -1,19 +1,44 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import 'dayjs/locale/de';
+import path from 'path';
+import process from 'process';
 dayjs.locale('de');
-
 const posts = await getCollection('news');
 posts.reverse();
-
+const file: string = Astro.props.file;
+console.log(file);
 import Page from '@/layouts/Page.astro';
+
+function resolveHeroImagePath(entry: CollectionEntry<'news'>) {
+	if (!entry.data.heroImage) {
+		return;
+	}
+
+	const file = entry.id;
+
+	// get directory path of file
+	const dir = file.substring(0, file.lastIndexOf('/'));
+
+	let heroImagePath = entry.data.heroImage;
+
+	if (!heroImagePath.startsWith('@')) {
+		heroImagePath = path.resolve(process.cwd() + '/src/content/news/' + dir + '/' + heroImagePath);
+	} else {
+		heroImagePath = path.resolve(process.cwd() + '/src' + heroImagePath.substring(1));
+	}
+
+	console.log(heroImagePath);
+
+	return heroImagePath;
+}
 ---
 
 <Page title="Aktuelles">
 	{
 		posts.map((entry) => (
-			<>
+			<div>
 				<div class="my-5">
 					<p class="text-sm text-gray-500">{dayjs(entry.data.publishedAt).format('DD. MMMM YYYY')}</p>
 					<a href={'/de/news/' + entry.slug} class="font-heading block mb-3 text-3xl cursor-poitner text-impf hover:text-impfhover">
@@ -24,8 +49,10 @@ import Page from '@/layouts/Page.astro';
 						Weiterlesen &raquo;
 					</a>
 				</div>
+
+				<Img src={resolveHeroImagePath(entry)}>
 				<hr />
-			</>
+			</div>
 		))
 	}
 </Page>
