@@ -1,7 +1,7 @@
 ---
 title: Vorstandsvorsitzender Simon Hennes im "ÄrzteTag" - Podcast
 layout: '@/layouts/Page.astro'
-heroImage: Simon-Hennes-ist-Medizinstudent-und-Vorstandsvorsitzender-202664h.jpg
+heroImage: ./Simon-Hennes-ist-Medizinstudent-und-Vorstandsvorsitzender-202664h.jpg
 slug: vorstandsvorsitzender-simon-hennes-im-aerztetag-podcast
 publishedAt: 2022-03-25
 ---
