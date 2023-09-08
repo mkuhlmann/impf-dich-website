@@ -3,7 +3,7 @@ title: Erlangen
 latitude: 49.5896744
 longitude: 11.0119611
 layout: '@/layouts/Page.astro'
-heroImage: erlangen_gruppenfoto_2019_crop.jpg
+heroImage: '@/assets/erlangen_gruppenfoto_2019_crop.jpg'
 ---
 
 # GET VACCINATED!

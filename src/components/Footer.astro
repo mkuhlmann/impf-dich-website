@@ -46,7 +46,7 @@ const newsToShow = newsCollection.slice(0, 5);
 			<ul class="mb-4">
 				{
 					newsToShow.map((entry) => (
-						<li>
+						<li class="list-disc ml-3">
 							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + entry.slug} class="block mb-2">
 								{entry.data.title}
 							</a>

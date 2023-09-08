@@ -13,4 +13,4 @@ Wir setzen uns für eine **neutrale und wissenschaftsbasierte Impfaufklärung an
 
 <br>
 
-![Essen](./essen.png)
+![Essen](@/assets/essen.png)

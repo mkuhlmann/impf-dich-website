@@ -5,6 +5,6 @@ longitude: 7.8421043
 layout: '@/layouts/Page.astro'
 ---
 
-![Freiburg](./freiburg.png)
+![Freiburg](@/assets/freiburg.png)
 
 # [Zu unserer Homepage bei der Fachschaft Freiburg](https://ofamed.de/projekte/impfaufklaerung/)

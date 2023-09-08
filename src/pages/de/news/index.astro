@@ -8,7 +8,7 @@ dayjs.locale('de');
 const posts = await getCollection('news');
 posts.reverse();
 const file: string = Astro.props.file;
-console.log(file);
+
 import Page from '@/layouts/Page.astro';
 
 function resolveHeroImagePath(entry: CollectionEntry<'news'>) {
@@ -21,7 +21,7 @@ function resolveHeroImagePath(entry: CollectionEntry<'news'>) {
 	// get directory path of file
 	const dir = file.substring(0, file.lastIndexOf('/'));
 
-	let heroImagePath = entry.data.heroImage;
+	let heroImagePath = entry.data.heroImage.src;
 
 	if (!heroImagePath.startsWith('@')) {
 		heroImagePath = path.resolve(process.cwd() + '/src/content/news/' + dir + '/' + heroImagePath);
@@ -50,7 +50,6 @@ function resolveHeroImagePath(entry: CollectionEntry<'news'>) {
 					</a>
 				</div>
 
-				<Img src={resolveHeroImagePath(entry)}>
 				<hr />
 			</div>
 		))
