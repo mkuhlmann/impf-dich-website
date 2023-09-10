@@ -9,7 +9,4 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://impf-dich.org',
 	integrations: [tailwind(), astroImageTools, mdx(), sitemap()],
-	experimental: {
-		assets: true,
-	},
 });

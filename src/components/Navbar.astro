@@ -80,16 +80,10 @@ const menuItems: MenuDefinition = {
 				{
 					title: 'Krankheiten',
 					to: '/de/wissen/krankheiten',
-					items: [
-						{
-							title: 'Röteln',
-							to: '/de/wissen/krankheiten/roeteln',
-						},
-						{
-							title: 'Diphtherie',
-							to: '/de/wissen/krankheiten/diphtherie',
-						},
-					],
+					items: (await Astro.glob('../pages/de/wissen/krankheiten/*.md')).map((page) => ({
+						title: page.frontmatter.title,
+						to: page.url,
+					})),
 				},
 				{
 					title: 'Allgemein',
@@ -123,7 +117,7 @@ const menuItems: MenuDefinition = {
 					<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />
 				</a>
 				<button class="block lg:hidden rounded-lg focus:outline-none focus:shadow-outline" onclick="toggleMenu();">
-					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+									<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
 						<path
 							id="menuClosedCaret"
 							fill-rule="evenodd"
@@ -216,27 +210,27 @@ const menuItems: MenuDefinition = {
 </div>
 
 <script is:inline>
-	let menuState = false;
-	const toggle = document.querySelectorAll('.menu-toggle');
-	const menuOpenCaret = document.querySelector('#menuOpenCaret');
-	const menuClosedCaret = document.querySelector('#menuClosedCaret');
+let menuState = false;
+const toggle = document.querySelectorAll('.menu-toggle');
+const menuOpenCaret = document.querySelector('#menuOpenCaret');
+const menuClosedCaret = document.querySelector('#menuClosedCaret');
 
-	function toggleMenu() {
-		menuState = !menuState;
-		if (menuState) {
-			menuOpenCaret.classList.remove('hidden');
-			menuClosedCaret.classList.add('hidden');
-			toggle.forEach((el) => {
-				el.classList.remove('hidden');
-			});
-		} else {
-			menuOpenCaret.classList.add('hidden');
-			menuClosedCaret.classList.remove('hidden');
-			toggle.forEach((el) => {
-				el.classList.add('hidden');
-			});
-		}
+function toggleMenu() {
+	menuState = !menuState;
+	if (menuState) {
+		menuOpenCaret.classList.remove('hidden');
+		menuClosedCaret.classList.add('hidden');
+		toggle.forEach((el) => {
+			el.classList.remove('hidden');
+		});
+	} else {
+		menuOpenCaret.classList.add('hidden');
+		menuClosedCaret.classList.remove('hidden');
+		toggle.forEach((el) => {
+			el.classList.add('hidden');
+		});
 	}
+}
 </script>
 
 <style lang="scss" is:global>
