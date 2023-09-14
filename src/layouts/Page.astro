@@ -27,7 +27,7 @@ if (content && content.heroImage) {
 const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} useBackground={true}>
 	<Navbar rounded={heroImagePath ? true : false} />
 
 	{

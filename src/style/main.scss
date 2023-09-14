@@ -40,6 +40,11 @@
 	}
 }
 
+body.useBackground,
+body.useBackground .navbar {
+	background-image: url(/white_texture.png);
+}
+
 .content a,
 a.link {
 	@apply text-impf hover:text-impfhover cursor-pointer;
