@@ -67,13 +67,17 @@ Die Krankheitsentstehung der SSPE ist jedoch nicht genau bekannt. Hervorgerufen 
 
 </blockquote>
 
-Geschätztes Risiko für eine SSPE-Erkrankung24
+Geschätztes Risiko für eine SSPE-Erkrankung (24)
 
-durchschnittlich4-11 SSPE-Fälle pro 100.000 Masernerkrankungen
+<div class="tablediv">
 
-Kinder, die im Alter v. < 5 Jahren an den Masern erkranken30-60 SSPE-Fälle pro 100.000 Masernerkrankungen
+| Gruppe                                                     | SSPE-Fälle                                      |
+| ---------------------------------------------------------- | ----------------------------------------------- |
+| durchschnittlich                                           | 4-11 SSPE-Fälle pro 100.000 Masernerkrankungen  |
+| Kinder, die im Alter v. < 5 Jahren an den Masern erkranken | 30-60 SSPE-Fälle pro 100.000 Masernerkrankungen |
+| Kinder, die im ersten Lebensjahr an den Masern erkranken   | 170 SSPE-Fälle pro 100.000 Masernerkrankungen   |
 
-Kinder, die im ersten Lebensjahr an den Masern erkranken170 SSPE-Fälle pro 100.000 Masernerkrankungen
+</div>
 
 Die Weltgesundheitsorganisation schätzt das Sterberisiko der Masernerkrankung in entwickelten Ländern zwischen 0,01% und 0,1 % ein. 24
 

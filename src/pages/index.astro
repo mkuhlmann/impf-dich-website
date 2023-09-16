@@ -7,9 +7,9 @@ import Navbar from '@/components/Navbar.astro';
 import Lokalgruppen from '@/components/Lokalgruppen.astro';
 import { Image } from 'astro:assets';
 
-import fbox1 from '../assets/fbox-1.jpg';
-import fbox2 from '../assets/fbox-2.jpg';
-import fbox3 from '../assets/fbox-3.jpg';
+import fbox1 from '@/assets/fbox-1.jpg';
+import fbox2 from '@/assets/fbox-2.jpg';
+import fbox3 from '@/assets/fbox-3.jpg';
 import schueler from '@/assets/schueler.jpg';
 ---
 
@@ -112,16 +112,18 @@ import schueler from '@/assets/schueler.jpg';
 			<div class="mb-10 px-5">
 				<h1 class="text-3xl font-bold font-heading mb-5">Aktuelles</h1>
 				<script>
-					fetch('https://app.impf-dich.org/api/instagram/feed')
-						.then((r) => r.json())
-						.then((r) => {
-							const container = document.querySelector('#ig-container')!;
-							container.innerHTML = '';
-							for (let i = 0; i < r.length && i < 10; i++) {
-								const post = r[i];
-								container.innerHTML += `<div class="p-2"><a href="${post.permalink}" target="_blank"><img src="https://app.impf-dich.org/instagram/image/${post.id}" alt="${post.caption}" class="rounded-lg"></a></div>`;
-							}
-						});
+					document.addEventListener('astro:page-load', function () {
+						fetch('https://app.impf-dich.org/api/instagram/feed')
+							.then((r) => r.json())
+							.then((r) => {
+								const container = document.querySelector('#ig-container')!;
+								container.innerHTML = '';
+								for (let i = 0; i < r.length && i < 10; i++) {
+									const post = r[i];
+									container.innerHTML += `<div class="p-2"><a href="${post.permalink}" target="_blank"><img src="https://app.impf-dich.org/instagram/image/${post.id}" alt="${post.caption}" class="rounded-lg"></a></div>`;
+								}
+							});
+					});
 				</script>
 				<div class="grid grid-cols-2 lg:grid-cols-5 gap-5 items-center justify-center min-h-[500px]" id="ig-container">
 					<div role="status">

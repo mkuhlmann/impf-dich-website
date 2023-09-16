@@ -38,6 +38,24 @@
 	blockquote {
 		@apply border-l-4 border-impf p-2 pl-5 my-5 bg-gray-100;
 	}
+
+	.tablediv {
+		table {
+			@apply border-collapse border border-gray-300 w-full;
+
+			td {
+				@apply p-2 border border-gray-300;
+			}
+
+			tr:nth-child(odd) {
+				@apply bg-gray-100;
+			}
+
+			th {
+				@apply p-2 border border-gray-300 bg-gray-200;
+			}
+		}
+	}
 }
 
 body.useBackground,

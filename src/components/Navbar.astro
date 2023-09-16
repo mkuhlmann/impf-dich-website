@@ -90,6 +90,14 @@ const menuItems: MenuDefinition = {
 					to: '/de/wissen/allgemein',
 					items: [
 						{
+							title: 'Häufige Fragen',
+							to: '/de/wissen/allgemein/faq',
+						},
+						{
+							title: 'Quiz',
+							to: '/de/wissen/allgemein/quiz',
+						},
+						{
 							title: 'Wie funktioniert eine Impfung?',
 							to: '/de/wissen/allgemein/wie-funktioniert-eine-impfung',
 						},
@@ -111,7 +119,7 @@ const menuItems: MenuDefinition = {
 
 <div class="w-full absolute top-0 navbar">
 	<div class={'container mx-auto border-impf border-t-8 bg-white px-5 shadow-md' + (rounded ? ' lg:rounded-b-md' : '')} style="z-index: 1000;">
-		<div class="flex flex-col lg:flex-row font-roboto">
+		<div class="flex flex-col lg:flex-row font-inter">
 			<div class="grow lg:grow-0 flex justify-between">
 				<a href="/" class="grow py-2 mr-6">
 					<img src="/logo-quer-rgb.svg" alt="Impf Dich Logo" width="220" />

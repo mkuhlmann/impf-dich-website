@@ -4,6 +4,7 @@ import '@fontsource/raleway';
 import '@fontsource/raleway/300.css';
 import '@fontsource/roboto';
 import '@/style/main.scss';
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
 	title: string;
@@ -27,6 +28,7 @@ const { title, useBackground } = Astro.props;
 		<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
 		<link rel="shortcut icon" href="/favicon/favicon.ico" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<ViewTransitions />
 	</head>
 	<body class:list={[{ useBackground: useBackground }]}>
 		<slot />

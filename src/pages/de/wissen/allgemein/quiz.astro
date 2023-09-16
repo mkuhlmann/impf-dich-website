@@ -1,0 +1,378 @@
+---
+import Page from '@/layouts/Page.astro';
+import Quiz from '@/components/Quiz.vue';
+---
+
+<Page title="Quiz">
+	<script>
+		window.__quiz = {
+			questions: [
+				{
+					text: 'Welche Aussage zur aktiven Immunisierung (Schutzimpfung) ist richtig?',
+					answers: [
+						{
+							text: 'Eine Impfung ist das Einbringen von abgeschwächten Krankheitserregern oder Erregerbestandteilen in den Körper, um die Ausbildung eines Schutzes gegen den Erreger hervorzurufen.',
+							explanation:
+								'Eine Impfung lehrt das Immunsystem eines Lebewesens Abwehrmechanismen gegen einen Krankheitserreger auszubilden und diesen dann zu bekämpfen, wenn es im weiterem Leben zu einer wirklichen Ansteckung durch den Erreger kommt. Der Erreger wird als Angreifer erkannt und von dem Immunsystem eliminiert. So wird der Ausbruch der Krankheit verhindert.',
+							isRight: true,
+						},
+						{
+							text: 'Eine Impfung ist das Einbringen von Krankheitserregern in den Körper, die den Ausbruch der Krankheit bewirken. ',
+							explanation:
+								'Eine Impfung soll den Ausbruch einer Krankheit bei Infektion verhindern und nicht bewirken. Die Impfung an sich führt zu einer Immunreaktion, die den Schutz gegen Krankheitserreger sicherstellt. In der Regel äußert sich das nur durch eine leichte Impfreaktion in Form von Temperaturanstieg, leichte Abgeschlagenheit oder eine lokale Reaktion an der Injektionsstelle. Ein Ausbruch der Krankheit gegen die man impft ist nur als absolute Seltenheit und als Nebenwirkung beschrieben.',
+							isRight: false,
+						},
+						{
+							text: 'Man kann nur gegen Viren impfen, gegen Bakterien ist man machtlos.',
+							explanation:
+								'Es gibt nicht nur Impfungen gegen Viruserkrankungen, sondern auch gegen Bakterien oder Giftstoffe, die von Bakterien hergestellt werden (z.B. Tetanus, Diphterie, HibB). Eine genaue Liste, gegen was man sich impfen lassen kann, findet Ihr auf unserer Website unter dem Reiter „Impf-Info“.',
+							isRight: false,
+						},
+						{
+							text: 'Eine Impfung wird nur bei Kindern angewendet, um sie vor Krankheiten zu schützen.',
+							explanation:
+								'Nicht nur Kinder sollten geimpft werden. Auch Erwachsene benötigen Impfungen, um ausreichend vor potenziellen Erregern geschützt zu sein. Eine genaue Liste, wann und wer sich gegen was impfen lassen sollte, findet Ihr auf unserer Website unter dem Reiter „Impf-Info“.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Was ist das Immunsystem?',
+					answers: [
+						{
+							text: 'Ein System von Abwehrmechanismen des Körpers um sich gegen Erreger aus der Umwelt zu schützen.',
+							explanation:
+								' Zum Schutz vor Keimen und Erkrankung haben Lebewesen im Verlauf der Evolution verschiedene Barrieren entwickelt. Zu Beginn stehen z.B mechanische Barrieren, wie die Haut und Schleimhaut oder auch chemische Barrieren wie die Magensäure. Schafft es der Erreger diesen Schutz zu überwinden, werden Zellen und Stoffe im Blut aktiviert, die den Erreger aufsuchen und bekämpfen, was oft mehrere Stunden bis Tage dauern kann. Oftmals antwortet das Immunsystem mit einer verstärkten Reaktion wie Fieber, Krankheitsgefühl oder Schmerzen. Diese Abwehrmechanismen sind bereits bei der Geburt vorhanden. Das Immunsystem ist aber auch lernfähig: Es gibt spezielle Immunzellen im Körper, die bei Infektion auf den Erreger reagieren, sich diesen merken und bekämpfen. Bei einer erneuten Ansteckung mit dem Erreger, erkennen die Immunzellen den Angreifer sofort und eliminieren diesen. Das ist die sogenannte erworbene Immunität, die der Mensch erst im Laufe seines Lebens erwirbt und die sich Impfungen zu Nutze machen. ',
+							isRight: true,
+						},
+						{
+							text: 'Das Immunsystem besteht nur aus Vitaminen und Probiotika, die man regelmäßig auffüllen muss.',
+							explanation:
+								'Auch wenn es vielleicht so manche Werbung verkaufen will: Das Immunsystem ist schon nach Geburt vorhanden und spezialisiert sich im Verlauf des Lebens Erreger gezielt zu bekämpfen. Man kann es durch Vitamine und Probiotika vielleicht in einem gewissen Rahmen stärken, jedoch bilden Abwehrzellen und Antikörper die Basis für das Immunsystem. Sie kann man nur durch Impfungen trainieren. ',
+							isRight: false,
+						},
+						{
+							text: 'Das Immunsystem ist eine Erkrankung, an der viele Meschen versterben.',
+							explanation: 'Das Immunsystem ist keine Erkrankung, sondern ein körpereigener Schutz gegen Krankheitserreger.',
+							isRight: false,
+						},
+						{
+							text: 'Das Immunsystem ist die körperliche Abwehr, die durch Impfungen ensteht.',
+							explanation:
+								'Alle gesunden Menschen besitzen in der Regel ein voll funktionstüchtiges Immunsystem, mit oder ohne Impfung. Es gibt jedoch Erreger, die schwerwiegende Krankheiten verursachen und die ein Immunsystem nur mit sehr viel Mühe bekämpfen kann. In manchen Fällen scheitert das Immunsystem, was zu langwierigen Folgen (Taubheut, Unfruchtbarkeit) oder zum Tod führen kann. Durch Impfungen wird das Immunsystem für solche Fälle trainiert, sodass der Körper auch bei Infektion von schweren Erkrankungen meist keine Probleme hat, gesund zu bleiben.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Auf welchem Wege kommt es in der Regel nicht zur Ausbreitung von Infektionskrankheiten?',
+					answers: [
+						{
+							text: 'Essen und Trinken',
+							explanation: 'Durch kontaminierte Lebensmittel oder Trinkwasser können krankheitserregende Keime in den Körper gelangen und zu Erkrankungen wie Hepatits A, Typhus oder Cholera führen.',
+							isRight: false,
+						},
+						{
+							text: 'Husten',
+							explanation:
+								'Über Tröpfcheninfektion können sich vor allem Viren schnell ausbreiten, wie man es z.B. häufig an den sog. Windpocken (Varizellen) sehen kann. Oftmals sind mehrere Kinder eines Kindergartens erkrankt.',
+							isRight: false,
+						},
+						{
+							text: 'Geschlechtsverkehr',
+							explanation:
+								'Auch hier können durch Schleimhautkontakt Krankheitserreger übertragen werden. Infektion durch Hepatits B stellt zum Beispiel eins der Risiken bei ungeschützten Geschlechtsverkehr dar. Kondome liefern im Gegensatz zu einer Impfung keine absolute Sicherheit vor einen Infektion',
+							isRight: false,
+						},
+						{
+							text: 'Offene Wunden',
+							explanation:
+								'Hat man sich eine Wunde zugezogen, ist es wichtig zu wissen, ob man einen ausreichenden Tetanusschutz (Wundstarrkrampf) hat. Das Bakterium Clostridium tetani ist überall in der Natur verbreitet. Gelangt es durch eine offene Wunde in den Körper eines Menschen, setzt es einen Giftstoff frei, das sog. Tetanustoxin, welches Muskelkrämpfe auslöst und sogar durch Ersticken zum Tode führen kann. ',
+							isRight: false,
+						},
+						{
+							text: 'Mangelnde Hygiene z.B. der Hände',
+							explanation:
+								'Sei es im öffentlichem Verkehr oder am Arbeitsplatz: ständig berührt man Gegenstände, die vorher von Anderen angefasst worden sind. Auf unserer Haut können Erreger unterschiedlich lang überleben und durch Schmierinfektion dann krank machen. Dies wird unter anderem durch die jährlichen Grippewellen in den Wintermonaten deutlich.',
+							isRight: false,
+						},
+						{
+							text: 'einen guten Impfschutz (aktive Immuniserung)',
+							explanation:
+								'Impfen ist laut der Weltgesundheitsorganisation (WHO) nach gesundem Wasser das beste Mittel zur Prävention von Infektionskrankheiten. Deshalb ist es wichtig, dass wir in Deutschland, aber auch weltweit einen guten Impfschutz haben. Impfkampagnen haben bereits zur Ausrottung der Pocken geführt, andere Krankheiten wurden stark eingedämmt. Eine Ansteckung über eine Impfung ist eine extreme Seltenheit, die in der Literatur erst wenige male beobachtet wurde. Für Geimpfte besteht realistisch keine Gefahr.',
+							isRight: true,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Gegen welche Erreger wirkt eine Impfung (aktive Immunisierung)?',
+					answers: [
+						{
+							text: 'Bakterien, Viren, Toxine und Parasiten ',
+							explanation:
+								'Eine Impfung kann gegen ein breites Erregerspektrum aus Bakterien, Viren, Toxine und sogar Parasiten vorbeugen. Eine Übersicht, gegen was man sich impfen lassen sollte, findet Ihr auf unserer Website unter dem Reiter „Impf-Info“.',
+							isRight: true,
+						},
+						{
+							text: 'Krebs',
+							explanation:
+								'Leider gibt es gegen Krebs noch keine Impfung. Dafür aber gegen Viren, die ursächlich sind für eine bestimmte Art von Krebs: Mittels der HPV-Impfung können Mädchen gegen einen der Auslöser von Gebärmuttermundkrebs geschützt werden.',
+							isRight: false,
+						},
+						{
+							text: 'Rauchen',
+							explanation: 'Rauchen ist zwar unheimlich schädlich, jedoch kann man mit einer Impfung nicht gegen die Nikotin-Abhängigkeit vorgehen. ',
+							isRight: false,
+						},
+						{
+							text: 'Allergene',
+							explanation:
+								'Auch bei einer Allergie reagiert der Körper mit einer Immunreaktion. Diese ist aber im Gegensatz zu einer Infektion nicht gegen einen Krankheitserreger gerichtet, der aufgesucht und vernichtet werden soll, sondern gegen eine Substanz, die zu einer Unverträglichkeitsreaktion im Körper führt. Das Allergen kann nicht eliminiert und es kann auch kein Schutz gegen das Allergen aufgebaut werden. Erst durch das Entfernen der Substanz aus dem Körper kann die Immunreaktion wieder gebremst werden. Beispiele sind Nuss- oder Pollenallergie ',
+							isRight: false,
+						},
+						{
+							text: 'Diabetes ',
+							explanation:
+								'Der Diabetes (umgangssprachlich auch „Zuckerkrankheit“) lässt sich durch eine Impfung weder bekämpfen noch lässt sich dagegen vorbeugen. Ursächlich ist eine Stoffwechselstörung, die durch einen Mangel an Insulin oder einer Resistenz gegen dieses gekennzeichnet ist.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Welche der genannten Impfungen gibt es nicht?',
+					answers: [
+						{
+							text: 'Impfung mit Lebendimpfstoff',
+							explanation:
+								'Ein Lebendimpfstoff enthält abgeschwächte Krankheitserreger. Die einmalige Impfung bietet meist einen ausreichenden Impfschutz. Eine zweite Impfung dient nicht der Auffrischung, sondern soll einzelne „Impfversager“ erreichen, die keinen ausreichenden Schutz nach der ersten Impfung entwickelt haben.\r\nBeispiele: → MMR, Gelbfieber, Typhus\r\n',
+							isRight: false,
+						},
+						{
+							text: 'Impfung mit Totimpfstoff   ',
+							explanation:
+								'Totimpfstoffe bestehen aus inaktivierten Krankheitserregern (entweder abgetötete Erreger oder Erregerbestandteile) oder aus inaktiven Bestandteilen der Erregertoxine. Meist reicht eine einmalige Impfung nicht aus, um einen langanhaltenden Impfschutz sichern zu können, sodass sie in mehreren Teilimpfungen durchgeführt und ggf. aufgefrischt werden müssen.\r\nBeispiele: → Hepatitis B, Haemophylus influenzae Typ B, Pertussis, Tetanus\r\n',
+							isRight: false,
+						},
+						{
+							text: 'Schluckimpfung ',
+							explanation:
+								'Verschiedene Impfstoffe kann man zusammen verabreichen und führen somit zu einer Reduzierung der Injektionen. Es wurde gezeigt, dass dadurch die Impfbereitschaft in der Gesellschaft steigt.\r\nBeispiele: → Polio, Typhus, Cholera\r\n',
+							isRight: false,
+						},
+						{
+							text: 'Impfung mit Kombinationsimpfstoff ',
+							explanation:
+								'Impfstoffe gegen verschiedene Erreger kann man zusammen verabreichen und mehrere Fliegen mit einer Klatsche schlagen. Das bedeutet: weniger Impfungen (weniger Arztbesuche, weniger „Piekser“), weniger Kosten, weniger Begleitstoffe. Es wurde gezeigt, dass dadurch die Impfbereitschaft in der Gesellschaft steigt.\r\nBeispiele: → MMR, TdPa\r\n',
+							isRight: false,
+						},
+						{
+							text: 'Impfstoffe auf pflanzlicher Basis (Mohnblume)',
+							explanation:
+								'Impfungen sind gegen Krankheitserreger in Form von Viren oder Bakterien gerichtet. Um einen Impfschutz zu entwickeln, muss der Impfstoff Bestandteile dieser Erreger beinhalten. Impfstoffe auf pflanzlicher Basis würden keinen Impfschutz ausbilden. Die Mohnblume wird zur Gewinnung von Opioiden benutzt, das hat aber nichts mit Immunisierung zu tun.',
+							isRight: true,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Wie werden Impfstoffe nicht hergestellt?',
+					answers: [
+						{
+							text: 'Bakterien werden gezüchtet und dann aufgearbeitet.',
+							explanation:
+								'Impfstoffe gegen bakterielle Infektionserkrankungen sind meist Totimpfstoffe: Bakterien werden gezüchtet und entweder abgetötet und aufgearbeitet oder aber der Giftstoff des Bakteriums wird abgeschwächt. So wird eine Immunreaktion bewirkt. Die abgetöteten Bakterien können sich im Körper aber nicht mehr vermehren oder einen Krankheitsausbruch bewirken.',
+							isRight: false,
+						},
+						{
+							text: 'Viren werden in Tierzellen gezüchtet',
+							explanation:
+								'Die Herstellung von Impfstoffen gegen Viren ist nicht ganz so einfach wie Impfstoffe gegen bakterielle Erkrankungen, da Viren sich nur lebenden Zellen heranzüchten lassen. Dafür werden Zellkulturen benötigt, die z.B. aus Bindegewebszellen oder Affennierenzellen bestehen. Ein anderes Beispiel ist die Grippeimpfung, bei deren Herstellung das Grippevirus in befruchtete Hühnereier gespritzt wird. Die Eier werden bebrütet, damit sich das Virus weiter vermehren und dann weiter aufgearbeitet werden kann.',
+							isRight: false,
+						},
+						{
+							text: 'Mittels Gentechnik',
+							explanation:
+								' Das beste Beispiel ist die überaus erfolgreiche Impfung gegen Hepatitis B. Bei der Herstellung des Impfstoffes wird zunächst ein spezielles Gen des Virus isoliert, welches dafür zuständig ist, dass unser Körper auf den Erreger reagiert. Das Gen wird dann in die DNA von Hefepilzen eingebaut und vermehrt. Abschließend wird die DNA der Hefepilze so aufgearbeitet, dass am Ende der Impfstoff vorliegt. ',
+							isRight: false,
+						},
+						{
+							text: 'Das Blut von erkrankten Menschen wird als Basis für den Impfstoff genutzt.',
+							explanation: 'Heutzutage stehen bessere und nebenwirkungsärmere Methoden zur Verfügung. ',
+							isRight: true,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Wen schützt man durch Impfungen nicht?',
+					answers: [
+						{
+							text: 'Sich selbst.',
+							explanation: 'In erster Linie soll eine Impfung den eigenen Körper vor Infektionskrankheiten schützen.',
+							isRight: false,
+						},
+						{
+							text: 'Menschen in der eigenen Umgebung.\t',
+							explanation:
+								'! Wichtig ist auch der sog. Herdenschutz: In der Gesellschaft gibt es Gruppen von Menschen, die sich selbst nicht impfen lassen können. Dies sind z.B. Kranke, Kleinkinder, alte Menschen, Menschen mit bestimmtem Allergien und andere. Hinzu kommen Menschen, bei denen eine Impfung nicht wirkt (sog. Non-responder). Diese Menschen haben keinen ausreichenden Impfschutz und sind den teilweise sehr gefährlichen Erregern hilflos ausgeliefert. Durch eine hohe Impfquote wird sichergestellt, dass sich Erreger nicht breitflächig ausbreiten können und dementsprechend auch nicht die ungeimpften Individuen der Gesellschaft erreichen',
+							isRight: false,
+						},
+						{
+							text: 'Die Pharma-Industrie \t',
+							explanation:
+								'Impfungen sind in der Medizin einer der wichtigsten und einfachsten Maßnahmen, um Krankheiten vorzubeugen. Millionen von Menschen werden durch Impfungen tagtäglich vor gefährlichen Krankheiten geschützt. Durch konsequente Impfprogramme der WHO wurden die Pocken erfolgreich bekämpft. Seit 1977 gilt die Welt als pockenfrei. Andere Erkrankungen stehen kurz vor der Ausrottung. Die Pharma-Industrie erwirtschaftet nur 2-3% ihrer Umsätze durch Impfstoffe. ',
+							isRight: true,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Warum müssen Impfungen aufgefrischt werden?',
+					answers: [
+						{
+							text: 'Weil der Nutzen von Impfungen nicht eindeutig bewiesen ist.',
+							explanation:
+								'Der Nutzen von Impfungen ist heutzutage unbestritten. Jährlich kann dadurch der Tod von Millionen von Menschen verhindert werden, die ansonsten aufgrund von Tetanus, Hepatitis, Kinderlähmung, Masern oder Hirnhautentzündung durch Haemophilus influenzae Typ b verstorben wären. ',
+							isRight: false,
+						},
+						{
+							text: 'Impfungen müssen nicht aufgefrischt werden.',
+							explanation: 'Manche Impfungen müssen im Laufe des Lebens aufgefrischt werden, um einen sicheren Immunschutz zu haben.',
+							isRight: false,
+						},
+						{
+							text: 'Weil nach einer gewissen Zeit der Impfschutz nicht mehr sicher gewährleistet werden kann.',
+							explanation:
+								"Vor allem Totimpfstoffe, die aus abgeschwächten Erregermaterial bestehen, bewirken eine Immunreaktion, die zunächst einen ausreichenden Impfschutz bietet, jedoch weniger stark ist, wie z.B. nach einer Impfung mit einem Lebendimpfstoff. Die ''Erinnerung'' des Körpers an den Erreger als Angreifer verblasst mit den Jahren und um diese Erinnerung wieder zu erneuern, benötigt man für manche wiederholte Auffrischimpfungen. Gegen welche Krankheiten man sich erneut impfen lassen sollte, findet Ihr unter dem Reiter „Impf-Info“ auf unserer Website.",
+							isRight: true,
+						},
+						{
+							text: 'Um die Patienten ärmer zu machen.',
+							explanation:
+								'Die meisten empfohlenen Impfungen, werden auch von der Krankenkasse bezahlt. Dies gilt auch für Auffrischimpfungen. Lediglich Reiseimpfungen oder andere Impfungen, die nur für Risikogruppen empfohlen sind, müssen i.d.R. selbst oder vom Arbeitgeber gezahlt werden.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Was ist eine MMR-Impfung?',
+					answers: [
+						{
+							text: 'Eine Impfung, die gegen die meisten Infektionskrankheiten vorbeugt.',
+							explanation:
+								'Zwar ist die MMR-Impfung ein Kombinationsimpfstoff, welcher gegen drei Erkrankungen Immunschutz aufbaut, doch leider gibt es noch deutlich mehr Infektionskrankheiten gegen die man impfen muss, um einen vollständigen Impfschutz zu haben. Eine Übersicht, gegen was man sich wann impfen lassen sollte, findet Ihr auf unser Website unter dem Reiter „Impf-Info“.',
+							isRight: false,
+						},
+						{
+							text: 'Eine Impfung gegen mehrfach multi-restistente Erreger.',
+							explanation: ' Mit MMR-Impfung ist die Impfung gegen Mumps, Masern, Röteln gemeint.',
+							isRight: false,
+						},
+						{
+							text: 'Eine Impfung gegen folgende Kinderkrankheiten: Mumps, Masern und Röteln.',
+							explanation:
+								'Die MMR-Impfung ist ein Kombinationsimpfstoff, den man im Optimalfall drei Mal im Leben erhält: um das erste und um das zweite Lebensjahr herum, sowie noch einmal als Erwachsener ab dem 18. Lebensjahr. Auch wenn Mumps, Masern und Röteln zu den sogenannten Kinderkrankheiten gehören, ist ein ausreichender Impfschutz als Erwachsener wichtig, da bei Erkrankung besonders schwere Krankheitsverläufe zu erwarten sind, und vor allem Schwangere auf eine vollständige MMR-Impfung achten sollten: bei Infektion kann es zu schweren Fehlbildungen des Kindes bis hin zum frühen Kindstod kommen.',
+							isRight: true,
+						},
+						{
+							text: 'Eine Impfung, die so starke Nebenwirkungen hat, dass man sie vom Markt genommen hat.',
+							explanation:
+								'Die MMR-Impfung ist eine wichtige Impfung, die zweifach im Leben erfolgen sollte (siehe STIKO-Empfehlungen). Dadurch, dass es sich um eine Lebendimpfung handelt, kann es zu einer stärkeren Impfreaktion kommen als z.B. nach einer Impfung mit Totimpfstoffen. Dazu gehört: leichtes Fieber, Hautausschlag oder eine leichte Schwellung der Ohrspeicheldrüse. Starke Nebenwirkungen sind so selten, dass man mit gutem Gewissen diese Impfung weltweit empfiehlt.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Warum gibt es jedes Jahr eine neue Grippeimpfung?',
+					answers: [
+						{
+							text: 'Weil die Grippeimpfung eine geringe Wirksamkeit hat und man jedes Jahr versucht sie zu verbessern.',
+							explanation:
+								'Nicht die schwache Wirksamkeit der Grippeimpfung ist das Problem, sondern die schnelllebige Wandlung des Influenza-Virus, der zu der Erkrankung führt. So verändert das Virus ständig seine Struktur und es tauchen neue Varianten auf, sodass immer wieder neue Impfungen für die neuen Variationen hergestellt werden müssen. Jedes Jahr wird dann ein Impfstoff gegen die häufigsten 3 Varianten herausgebracht.',
+							isRight: false,
+						},
+						{
+							text: 'Damit die Krankenkassen mehr Geld bekommen.',
+							explanation:
+								'Dies ist nicht der Grund. Für alle Personen, die eine Empfehlung für die Grippeimpfung besitzen (Senioren, Menschen mit einer chronischen Erkrankung, Schwangere, Berufsgruppen) übernimmt die Krankenkasse die Kosten. Für alle anderen gilt: je nach Krankenkasse wird die Leistung übernommen, Du solltest sich am besten vorher erkundigen.',
+							isRight: false,
+						},
+						{
+							text: 'Es ist jedes Jahr die gleiche Impfung, nur der Name wird je nach Lieferant geändert.',
+							explanation:
+								'Der Impfstoff variiert von Jahr zu Jahr. Grund dafür ist, die Wandlungsfähigkeit des Influenza-Virus. So verändert das Virus ständig seine Struktur und es tauchen neue Varianten auf, sodass immer wieder neue Impfungen für die neuen Variationen hergestellt werden müssen. Jedes Jahr wird dann ein Impfstoff gegen die häufigsten drei Varianten herausgebracht. Richtig ist jedoch, dass es jedes Jahr mehrere Impfstoffe mit unterschiedlichen Namen je nach Produktionsfirma gibt.',
+							isRight: false,
+						},
+						{
+							text: 'Weil das Grippevirus sich verändert',
+							explanation:
+								'Das Virus verändert ständig seine Struktur, sodass die Impfungen vom letzten Jahr keinen sicheren Schutz mehr garantieren können. Zudem tauchen neue Varianten auf, weshalb immer wieder neue Impfungen für die neuen Variationen hergestellt werden müssen. Jedes Jahr wird dann ein Impfstoff gegen die häufigsten drei Varianten herausgebracht.',
+							isRight: true,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+				{
+					text: 'Was ist Nestschutz?',
+					answers: [
+						{
+							text: 'Der Schutz, den man hat, wenn man alle empfohlenen Impfungen erhalten hat',
+							explanation:
+								'Vielleicht hast du das mit der Grundimmunisierung verwechselt: Die Grundimmunisierung ist der Aufbau eines stabilen und vollständigen Immunschutzes nachdem man eine bestimmte Anzahl von Impfungen erhalten hat (siehe Impfkalender unter dem Reiter „Impf-Info“ auf unserer Website). Durch regelmäßige Auffrischimpfungen bleibt der optimale Schutz erhalten. ',
+							isRight: false,
+						},
+						{
+							text: 'Der Immunschutz, den Neugeborene dank mütterlichen Proteinen von Geburt an haben.',
+							explanation:
+								'Während der Schwangerschaft kann ein Teil des Immunschutzes der Mutter auch auf das ungeborene Kind übergehen, sodass es nach Geburt einen Restschutz gegen Krankheiten besitzt. So sind Neugeborene von Müttern die gegen Masern geimpft sind zu Beginn des Lebens für die ersten Monate noch ausreichend gegen diese Erkrankung geschützt. Hinzu kommt eine weitere Stärkung des Neugeborenenimmunsystems beim Stillen durch die Muttermilch, die wichtige Inhaltsstoffe und Antikörper besitzt.',
+							isRight: true,
+						},
+						{
+							text: 'Die Stärkung des Immunsystem durch Probiotika.',
+							explanation:
+								"Probiotika, die z.B. Milchsäurebakterien enthalten, sollen einen positiven Einfluss auf das Immunsystem haben, indem sie eine gesunde Darmflora stärken. Unser Körper ist ein Zuhause für viele Millionen von sog. ''guten'' Bakterien, die sogar sehr wichtig sind, damit der Mensch gesund ist. Vor allem der Darm beherbergt viele von solchen Bakterien, die mitunter auch Schutz vor Erregern sicherstellen, die durch Nahrung und Trinkwasser aufgenommen werden. Mit Nestschutz ist etwas anderes gemeint. ",
+							isRight: false,
+						},
+						{
+							text: "Der Gedanke, dass solange man in seinem ''Nest'' ist, d.h. Erregern soweit wie möglich fern bleibt, einen ausreichenden Immunschutz hat.",
+							explanation:
+								'Natürlich kann man versuchen durch strenge Hygiene, das Risiko Krankheitserreger aufzunehmen auf das Minimum zu reduzieren. Dies ist jedoch so gut wie kaum möglich: Tagtäglich haben wir Kontakt zu Menschen, Tieren und auch der Natur. Vor allem durch Tröpfchen- und Schmierinfektion können sich Krankheitserreger schnell ausbreiten. Mit Nestschutz ist etwas anderes gemeint.',
+							isRight: false,
+						},
+					],
+					isAnswered: false,
+					isRight: false,
+					answerIdx: null,
+				},
+			],
+		};
+	</script>
+
+	<Quiz client:only />
+</Page>
