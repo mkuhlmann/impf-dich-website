@@ -30,7 +30,7 @@ const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
 				href: lokalgruppe.url,
 				coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
 			};
-		})
+		}),
 	)}
 />
 
@@ -38,26 +38,28 @@ const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
 	/* @ts-ignore */
 	import * as L from 'leaflet';
 
-	var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
+	document.addEventListener('astro:page-load', function () {
+		var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
 
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	}).addTo(map);
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		}).addTo(map);
 
-	var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
+		var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
 
-	// async function geocode(city, apiKey) {
-	// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
+		// async function geocode(city, apiKey) {
+		// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
 
-	// 	if (!json || !json.results.length > 0) {
-	// 		console.error('error geocoding city: ' + city);
-	// 	}
-	// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
-	// }
+		// 	if (!json || !json.results.length > 0) {
+		// 		console.error('error geocoding city: ' + city);
+		// 	}
+		// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
+		// }
 
-	lokalgruppen.forEach(function (lokalgruppe: any) {
-		L.marker(lokalgruppe.coords)
-			.addTo(map)
-			.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
+		lokalgruppen.forEach(function (lokalgruppe: any) {
+			L.marker(lokalgruppe.coords)
+				.addTo(map)
+				.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
+		});
 	});
 </script>

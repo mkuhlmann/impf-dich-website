@@ -1,5 +1,5 @@
 ---
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import 'dayjs/locale/de';
 import path from 'path';
@@ -45,7 +45,7 @@ function resolveHeroImagePath(entry: CollectionEntry<'news'>) {
 						{entry.data.title}
 					</a>
 					<p>{entry.body.replace(/^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} #{0,}(\n)?\s{0,}$/gm, '$1$2$3').substring(0, 800)}</p>
-					<a href={'/de/news/' + entry.slug} class="text-blue-500 hover:text-blue-700">
+					<a href={'/de/news/' + entry.slug} class="text-impf hover:text-impfhover">
 						Weiterlesen &raquo;
 					</a>
 				</div>

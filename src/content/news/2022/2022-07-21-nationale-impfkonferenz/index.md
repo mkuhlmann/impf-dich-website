@@ -2,6 +2,7 @@
 title: 7. Nationale Impfkonferenz in Wiesbaden
 layout: '@/layouts/Page.astro'
 slug: 7-nationalen-impfkonferenz-in-wiesbaden
+publishedAt: 2022-06-21
 ---
 
 Was läuft im Moment hinter den Kulissen von Impf Dich ab?
