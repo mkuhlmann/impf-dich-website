@@ -1,0 +1,27 @@
+---
+import logoRGB from '@/assets/logo-rgb.svg';
+import { Image } from 'astro:assets';
+
+export interface Props {
+	name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<div class="flex justify-center items-center gap-5">
+	<div class="border-r-2 border-r-stone-200">
+		<Image src={logoRGB} alt="Impf Dich Logo" width="600" />
+	</div>
+
+	<div>
+		<h1 class="text-3xl font-bold">
+			{name}
+		</h1>
+		<p>Die Lokalgruppe {name} hat bislang noch keinen Inhalt veröffentlicht.</p>
+		<p>
+			Wir werden zeitnah aktuelle Informationen hier einfügen. Bis dahin kann die Lokalgruppe unter {name.toLowerCase().replace('ü', 'ue')}@impf-dich.org erreicht werden. Interessierte Student*innen nutzen bitte das
+			Formular ganz unten an diesem Reiter “<a href="/de/lokalgruppen/mitmachen">Eigene Gruppe gründen</a>”. Dort kann man sich für diese Lokalgruppe registrieren.
+		</p>
+	</div>
+</div>

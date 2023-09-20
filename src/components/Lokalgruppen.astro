@@ -1,5 +1,5 @@
 ---
-const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
+const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md*');
 ---
 
 <div class="flex flex-col md:flex-row">
@@ -57,6 +57,7 @@ const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md');
 		// }
 
 		lokalgruppen.forEach(function (lokalgruppe: any) {
+			console.log(lokalgruppe);
 			L.marker(lokalgruppe.coords)
 				.addTo(map)
 				.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');

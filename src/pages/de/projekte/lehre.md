@@ -1,5 +1,5 @@
 ---
-title: Lehre
+title: Universitäre Lehre
 layout: '@/layouts/Page.astro'
 ---
 
