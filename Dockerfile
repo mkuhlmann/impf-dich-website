@@ -1,9 +1,10 @@
-FROM node:lts AS build
+FROM oven/bun:1.0.7 AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+COPY bun.lockb ./
+RUN bun install
 COPY . .
-RUN npm run build
+RUN bun run build
 
 FROM nginx:alpine AS runtime
 COPY ./nginx.conf /etc/nginx/nginx.conf
