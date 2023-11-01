@@ -4,10 +4,10 @@ import { astroImageTools } from 'astro-imagetools';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-import vue from "@astrojs/vue";
+import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://impf-dich.org',
-  integrations: [tailwind(), astroImageTools, mdx(), sitemap(), vue()]
+	site: 'https://impf-dich.org',
+	integrations: [tailwind(), astroImageTools, mdx(), sitemap(), vue()],
 });
