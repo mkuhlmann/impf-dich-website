@@ -1,5 +1,9 @@
 ---
-const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md*');
+const _lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md*');
+
+const lokalgruppen = _lokalgruppen.filter((lokalgruppe) => {
+	return lokalgruppe.frontmatter.title != 'Mitmachen';
+});
 ---
 
 <div class="flex flex-col md:flex-row">
@@ -25,11 +29,15 @@ const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md*');
 	class="hidden"
 	set:html={JSON.stringify(
 		lokalgruppen.map((lokalgruppe) => {
-			return {
-				name: lokalgruppe.frontmatter.title,
-				href: lokalgruppe.url,
-				coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
-			};
+			if (lokalgruppe.frontmatter.latitude && lokalgruppe.frontmatter.longitude) {
+				return {
+					name: lokalgruppe.frontmatter.title,
+					href: lokalgruppe.url,
+					coords: [lokalgruppe.frontmatter.latitude, lokalgruppe.frontmatter.longitude],
+				};
+			} else {
+				return null;
+			}
 		}),
 	)}
 />
@@ -57,7 +65,7 @@ const lokalgruppen = await Astro.glob('../pages/de/lokalgruppen/*.md*');
 		// }
 
 		lokalgruppen.forEach(function (lokalgruppe: any) {
-			console.log(lokalgruppe);
+			if (lokalgruppe == null) return;
 			L.marker(lokalgruppe.coords)
 				.addTo(map)
 				.bindPopup('<div><strong>' + lokalgruppe.name + '</strong><br><a href="' + lokalgruppe.href + '">Zur Lokalgruppenseite</a></div>');
