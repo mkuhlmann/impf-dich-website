@@ -47,13 +47,15 @@ const lokalgruppen = _lokalgruppen.filter((lokalgruppe) => {
 	import * as L from 'leaflet';
 
 	document.addEventListener('astro:page-load', function () {
+		if (document.querySelector('#lgmap') == null) return;
+
 		var map = L.map('lgmap').setView([51.389078060389295, 10.340330121508005], 6);
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		}).addTo(map);
 
-		var lokalgruppen = JSON.parse(document.querySelector('#lglokal')!.innerHTML);
+		var lokalgruppen = JSON.parse(document.querySelector('#lglokal').innerHTML);
 
 		// async function geocode(city, apiKey) {
 		// 	let json = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + ', Germany' + '&key=' + apiKey).then((r) => r.json());
@@ -64,7 +66,7 @@ const lokalgruppen = _lokalgruppen.filter((lokalgruppe) => {
 		// 	return [json.results[0].geometry.location.lat, json.results[0].geometry.location.lng];
 		// }
 
-		lokalgruppen.forEach(function (lokalgruppe: any) {
+		lokalgruppen.forEach(function (lokalgruppe) {
 			if (lokalgruppe == null) return;
 			L.marker(lokalgruppe.coords)
 				.addTo(map)
