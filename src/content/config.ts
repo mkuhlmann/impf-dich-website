@@ -1,12 +1,13 @@
-import { defineCollection, image, z } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 
 const newsCollection = defineCollection({
-	schema: ({image}) => z.object({
-		title: z.string(),
-		author: z.string().default('Impf Dich'),
-		publishedAt: z.date().optional(),
-		heroImage: image().optional()
-	}),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			author: z.string().default('Impf Dich'),
+			publishedAt: z.date().optional(),
+			heroImage: image().optional(),
+		}),
 });
 
 export const collections = {

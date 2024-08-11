@@ -11,8 +11,6 @@ Das Hepatitis-B-Virus (HBV) gehört zu den Orthohepadnaviren der Familie der Hep
 
 <div class="flex justify-center">
 
-![Hepatits B-Virus](@/assets/hepatitis1.png)
-
 </div>
 
 _Abbildung 1: Schema des Hepatitis-B-Virus aus Hof, Herbert; Schlüter, Dirk „Medizinische Mikrobiologie", 7\. Auflage, Georg Thieme Verlag, Stuttgart 2019\._

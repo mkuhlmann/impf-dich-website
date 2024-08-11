@@ -3,7 +3,8 @@ import Navbar from '@/components/Navbar.astro';
 import Layout from './Layout.astro';
 import Footer from '@/components/Footer.astro';
 import path from 'path';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+import { resolveImage } from '@/utils/astroImage';
 const { content } = Astro.props;
 
 let heroImagePath = null;
@@ -12,13 +13,14 @@ if (content && content.heroImage) {
 	const file: string = Astro.props.file;
 	// get directory path of file
 	const dir = file.substring(0, file.lastIndexOf('/'));
+	const relativeDir = dir.substring(process.cwd().length);
 
 	heroImagePath = content.heroImage;
 
-	if (!heroImagePath.startsWith('@')) {
-		heroImagePath = dir + '/' + heroImagePath;
-	} else {
-		heroImagePath = path.resolve(process.cwd() + '/src' + heroImagePath.substring(1));
+	if (heroImagePath.startsWith('@')) {
+		heroImagePath = '/src/' + heroImagePath.substring(2);
+	} else if (heroImagePath.startsWith('.')) {
+		heroImagePath = relativeDir + '/' + heroImagePath.substring(2);
 	}
 
 	console.log(`heroImagePath: ${heroImagePath}`);
@@ -34,7 +36,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		heroImagePath && (
 			<div class="bg-gray-700" style=" z-index: -100;">
 				<div class="container mx-auto flex justify-center" style="padding-top: 75px;">
-					<Img src={heroImagePath} alt="Hero Image" />
+					<Image src={resolveImage(heroImagePath)()} alt="hero image" />
 				</div>
 			</div>
 		)

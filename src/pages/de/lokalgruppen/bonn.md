@@ -28,7 +28,7 @@ Für weitere Informationen zur Arbeit der Lokalgruppe oder bei Interesse am Enga
 
 <div>
 
-![Bei der Preisverleihung des "jung+engagiert"-Preises der Caritas](@/assets/bonn-preis-caritas-og.jpg)
+![Bei der Preisverleihung des "jung+engagiert"-Preises der Caritas](@/assets/2018-bonn-preis-caritas-og.jpg)
 
 <small>Bei der Preisverleihung des "jung+engagiert"-Preises der Caritas</small>
 
