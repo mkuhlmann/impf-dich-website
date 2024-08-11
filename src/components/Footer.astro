@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 const newsCollection = await getCollection('news');
 
 // limit to 5 posts
-const newsToShow = newsCollection.slice(0, 5);
+const newsToShow = newsCollection.toReversed().slice(0, 5);
 ---
 
 <footer class="footer bg-gray-700 text-white border-t-impf border-t-8">
