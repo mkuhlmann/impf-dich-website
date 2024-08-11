@@ -16,8 +16,8 @@ Viele Pharmaziestudierende sprachen uns am Wochenende an und wollen an verschied
 
 #### Mehr Infos finden sich auf der [Seite der BPhD](https://www.bphd.de/pressemitteilung-zum-17-pharmaweekend-in-heidelberg/)
 
-[![](./heidelberg-19-bphd-1-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/a/0/6/0/a060a3bb6e3033c3f37e696cf64656188a140782/heidelberg-19-bphd-1-1600x1200.jpg)
+[![](./heidelberg-19-bphd-1-800x600.jpg)](./heidelberg-19-bphd-1-1600x1200.jpg)
 
-[![](./heidelberg-19-bphd-2-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/8/0/2/8/802881293e477be0a6742764b58edb8022bf7269/heidelberg-19-bphd-2-1600x1200.jpg)
+[![](./heidelberg-19-bphd-2-800x600.jpg)](./heidelberg-19-bphd-2-1600x1200.jpg)
 
-[![](./heidelberg-19-bphd-3-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/2/5/9/0/259080ee85c32a58b8ca748c3590f26316ce2ab1/heidelberg-19-bphd-3-1600x1200.jpg)
+[![](./heidelberg-19-bphd-3-800x600.jpg)](./heidelberg-19-bphd-3-1600x1200.jpg)

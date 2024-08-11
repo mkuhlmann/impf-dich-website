@@ -13,10 +13,10 @@ Bei besten Bedingungen in der Sportanlage Nachtigallenweg trafen die Mediziner i
 
 Berichterstattung und Spieler des Spiels: Steffen Künzel
 
-[![](./bonn-19-fussball-1-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/a/3/c/e/a3ce9b13898965054a81ff80b083f05d66f107f6/bonn-19-fussball-1.jpg)
+[![](./bonn-19-fussball-1-800x600.jpg)](./bonn-19-fussball-1.jpg)
 
-[![](./bonn-19-fussball-2-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/e/7/4/4/e744b8607a06ea625bec1528ba52e23fc6859372/bonn-19-fussball-2.jpg)
+[![](./bonn-19-fussball-2-800x600.jpg)](./bonn-19-fussball-2.jpg)
 
-[![](./bonn-19-fussball-3-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/e/1/5/9/e1592d06b3395208b3ac15dd98f9f537edf6d28b/bonn-19-fussball-3.jpg)
+[![](./bonn-19-fussball-3-800x600.jpg)](./bonn-19-fussball-3.jpg)
 
-[![](./bonn-19-fussball-4-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/8/d/e/3/8de3caf696a3b58de4939b23982e2e329838ff69/bonn-19-fussball-4.jpg)
+[![](./bonn-19-fussball-4-800x600.jpg)](./bonn-19-fussball-4.jpg)

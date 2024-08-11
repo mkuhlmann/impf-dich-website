@@ -45,4 +45,4 @@ Für Rückfragen steht der Verein für Impfaufklärung in Deutschland e.V. unter
 **PM Corona-Impfung auch für Studierende in der Krankenversorgung.pdf**  
 die Pressemittelung als PDF herunterladen
 
-](https://impf-dich.org/_Resources/Persistent/4/7/7/9/4779edbc8e91707fb0f77007a5ad5cef2c895052/2021-02-08_PM_Patient_innen_und_Mitarbeitende_sch%C3%BCtzen_-_Corona-Impfung_f%C3%BCr_Studierende_in_der_Krankenversorgung.pdf)
+](./2021-02-08_PM_Patient_innen_und_Mitarbeitende_sch%C3%BCtzen_-_Corona-Impfung_f%C3%BCr_Studierende_in_der_Krankenversorgung.pdf)

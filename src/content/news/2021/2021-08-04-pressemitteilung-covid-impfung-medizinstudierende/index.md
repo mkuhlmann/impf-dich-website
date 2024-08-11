@@ -3,10 +3,9 @@ title: 'Covid-Impfungen bei Medizinstudierenden'
 layout: '@/layouts/Page.astro'
 slug: pressemitteilung-covid-impfung-medizinstudierende
 publishedAt: 2021-08-04
-
 ---
 
-Im Rahmen der gemeinsamen [Pressemitteilung/ Stellungnahme](https://www.bvmd.de/fileadmin/user_upload/2021-08-04_PM_Eine_vermeidbare_Gef%C3%A4hrdung_-_bvmd_und_Impf_Dich_ver%C3%B6ffentlichen_Daten_zu_Infektionszahlen_und_Fehlern_in_der_Impfkampagne_f%C3%BCr_Medizinstudierende.pdf) der Bundesvertretung der Medizinstudierenden in Deutschland e.V. (bvmd) und der Initiative Impfaufklärung in Deutschland e.V. (“Impf Dich”) haben wir erste Erkenntnisse der von uns initiierten COVRAM-Umfrage (COVID-19 Vaccination Readiness Assessment of Medical Students) veröffentlicht. Wir danken der Uni Erfurt und dem Communication Lab Erfurt für Feedback und Input zum Fragebogen und der Vorgehensweise. Das Ethik-Votum ([Link](https://impf-dich.org/_Resources/Persistent/f/e/3/4/fe344a0c13af576438eec1fe2758f754dc379188/Angenommener%20Ethikantrag_Erfurt_Mitteilung%20an%20die%20Antragsteller_eng.pdf)) wurde von der Universität Erfurt angenommen. 
+Im Rahmen der gemeinsamen [Pressemitteilung/ Stellungnahme](https://www.bvmd.de/fileadmin/user_upload/2021-08-04_PM_Eine_vermeidbare_Gef%C3%A4hrdung_-_bvmd_und_Impf_Dich_ver%C3%B6ffentlichen_Daten_zu_Infektionszahlen_und_Fehlern_in_der_Impfkampagne_f%C3%BCr_Medizinstudierende.pdf) der Bundesvertretung der Medizinstudierenden in Deutschland e.V. (bvmd) und der Initiative Impfaufklärung in Deutschland e.V. (“Impf Dich”) haben wir erste Erkenntnisse der von uns initiierten COVRAM-Umfrage (COVID-19 Vaccination Readiness Assessment of Medical Students) veröffentlicht. Wir danken der Uni Erfurt und dem Communication Lab Erfurt für Feedback und Input zum Fragebogen und der Vorgehensweise. Das Ethik-Votum ([Link](https://impf-dich.org/_Resources/Persistent/f/e/3/4/fe344a0c13af576438eec1fe2758f754dc379188/Angenommener%20Ethikantrag_Erfurt_Mitteilung%20an%20die%20Antragsteller_eng.pdf)) wurde von der Universität Erfurt angenommen.
 
 Die Umfrage ist an der [COSMO-Umfrage](https://projekte.uni-erfurt.de/cosmo2020/web/) orientiert, ähnelt vom Aufbau auch der [KROCO-Umfrage](https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Projekte_RKI/Kroco-Report150721.pdf?__blob=publicationFile) des RKIs und wurde spezifisch für das Setting der Medizinstudierenden angepasst.
 
@@ -29,13 +28,13 @@ In der COVRAM-Studie berichteten die Medizinstudierenden immer wieder von klaren
 
 ![](./uni.png)
 
-![](./nicht%20uni.png)
+![](./nicht uni.png)
 
 „**Einhaltung des Arbeitsschutzes und der STIKO-Empfehlungen** bedeutet eben nicht pauschal zwischen Berufsgruppen und aufgrund des Ausbildungsstatus zu differenzieren, sondern insbesondere auf Basis des individuellen Risikokontakts“, so Manuel Kuhlmann, Co-Leiter der Studie und Vorstandsmitglied von „Impf Dich“.
 
 Im Zeitraum der Umfrage waren 50.6% aller befragten Medizinstudierenden ungeimpft, 27,75% hatten eine und 21,63% zwei Impfungen erhalten; wobei über 60% der Nicht-PJ-Studierenden angaben, ihre Impfungen im Rahmen von Nebentätigkeiten erhalten zu haben. Fast 10% der Teilnehmenden im PJ haben Ihre Impfung nicht aufgrund ihres PJs allein bekommen. Die Impfquoten der Medizinstudierenden sind auch auf das Engagement einiger Fakultäten zurückzuführen. Hier sind der bvmd **deutliche Unterschiede** zwischen verschiedenen Fakultätsstandorten, Lehrkrankenhäusern und Universitätskliniken bekannt.
 
-![](./covid%20impfung.png)
+![](./covid impfung.png)
 
 ![](./reasonnichptj.png)
 
@@ -43,9 +42,9 @@ Im Zeitraum der Umfrage waren 50.6% aller befragten Medizinstudierenden ungeimpf
 
 28,12 % aller Medizinstudierenden sowie 36,48% der PJ-Studierenden gaben als einen Grund für eine verspätete oder bis zum Zeitpunkt der Befragung ausgebliebene Impfung an, dass ihre Universität/Fakultät sie nicht ausreichend bzgl. des Erhalts einer Impfung unterstützt hat. **Mangelnde Unterstützung** der Arbeitsstelle gaben 31,97% der PJ-Studierenden an. Unklare Zuständigkeiten sahen 32,6% bzw. 42,6% der PJler:innen als einen der Gründe in diesem Zusammenhang an. Leider wurde Medizinstudierenden auch vielfach das Ausstellen einer Bescheinigung zur Berechtigung zur Impfung verweigert. Das gaben 17,6% aller Studierenden im PJ und knapp 13% aller Ungeimpften insgesamt als einen der Faktoren an. Viele Medizinstudierende kritisierten zudem die **mangelnde Unterstützung und Berücksichtigung von der Politik** für die im Gesundheitssystem tätigen Medizinstudierenden beim Erhalt der Impfungen und machen u.a. die Organisation und Bürokratie der Impfkampagne und unklare Zuständigkeiten als einen Grund für einen schlechteren Erhalt der Impfungen aus.
 
-![](./Grafik%208.png)
+![](./Grafik 08.png)
 
-![](./Grafik%209.png)
+![](./Grafik 9.png)
 
 Die Studie zeigte außerdem eine überwältigende Impfbereitschaft für eine COVID-Impfung, weswegen bei adäquatem Angebot eine nahezu hundertprozentige Impfquote der Medizinstudierenden zu erwarten ist.
 
@@ -59,9 +58,9 @@ Auf Basis der Daten der COVRAM-Studie wird ein Paper zum Status und dem Wunsch b
 
 **Aufgrund der Ergebnisse der COVRAM-Studie empfehlen und fordern wir u.a.**
 
-*   die Einhaltung des laut Arbeitsschutzgesetz vorgegebenen Gleichbehandlung der in der Versorgung tätigen Medizinstudierenden mit den restlichen Mitarbeitenden in der Gesundheitsversorgung durch sämtliche Einrichtungen hinsichtlich des Zugangs zu Arbeitsschutzmaßnahmen inkl. Impfungen, sowie klinikinterne (digitale) Informationssysteme, Zugang zu Tests, Schulungen/Trainings, Schutzmaterialien etc.
-*   Bundeseinheitliche Regelungen und feste Verantwortlichkeiten, um den Zugang zu Impfungen lediglich aufgrund des Risikos/Tätigkeitsbereiches und nicht aufgrund von Zugehörigkeiten zu Berufsgruppen bzw. des Studierendenstatus zu differenzieren
-*   eine Fehleranalyse der Umsetzung der Impfpriorisierung bzgl. der Impfungen des medizinischen Personals, um dann ggf. Rückschlüsse ziehen zu können für eine die weitere Impfstoffverteilung und Impfkampagne, für Auffrischimpfungen oder Impfungen für bestimmte Mutationen, oder zukünftige Pandemien
+- die Einhaltung des laut Arbeitsschutzgesetz vorgegebenen Gleichbehandlung der in der Versorgung tätigen Medizinstudierenden mit den restlichen Mitarbeitenden in der Gesundheitsversorgung durch sämtliche Einrichtungen hinsichtlich des Zugangs zu Arbeitsschutzmaßnahmen inkl. Impfungen, sowie klinikinterne (digitale) Informationssysteme, Zugang zu Tests, Schulungen/Trainings, Schutzmaterialien etc.
+- Bundeseinheitliche Regelungen und feste Verantwortlichkeiten, um den Zugang zu Impfungen lediglich aufgrund des Risikos/Tätigkeitsbereiches und nicht aufgrund von Zugehörigkeiten zu Berufsgruppen bzw. des Studierendenstatus zu differenzieren
+- eine Fehleranalyse der Umsetzung der Impfpriorisierung bzgl. der Impfungen des medizinischen Personals, um dann ggf. Rückschlüsse ziehen zu können für eine die weitere Impfstoffverteilung und Impfkampagne, für Auffrischimpfungen oder Impfungen für bestimmte Mutationen, oder zukünftige Pandemien
 
 Die vollständigen Forderungen und Handlungsempfehlungen bvmd  und “Impf Dich” aufgrund der Ergebnisse der COVRAM-Studie finden Sie in der [gemeinsamen Pressemitteilung.](https://www.bvmd.de/wer-wir-sind/presse/pressemitteilungen)
 

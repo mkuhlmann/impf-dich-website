@@ -57,9 +57,9 @@ async function main() {
 
 				fs.mkdirSync(articlePath, { recursive: true });
 
-				let imageMatches = articleMd.matchAll(/\!\[\]\((.*?)\)/g);
+				let imageMatches = articleMd.matchAll(/\https\:\/\/impf-dich.*?\.(jpeg|jpg|png|svg|gif|pdf)/g);
 				for (let imageMatch of imageMatches) {
-					let imageUrl = imageMatch[1];
+					let imageUrl = imageMatch[0];
 					await downloadImage(articlePath, imageUrl);
 					articleMd = articleMd.replace(imageUrl, './' + getBasenameFormUrl(imageUrl));
 				}
@@ -85,5 +85,3 @@ ${articleMd}`;
 		}
 	}
 }
-
-main();

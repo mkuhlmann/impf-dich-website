@@ -16,8 +16,8 @@ Anhand der Rückmeldung der Schüler\*innen scheint es gelungen die unterschiedl
 
 Quelle: Bericht der IWK Waldbröl - [https://www.iwk.eu/aktuelles-waldbroel?start=3](https://www.iwk.eu/aktuelles-waldbroel?start=3)
 
-[![](./bonn-20-WB_Impf_Dich_1-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/9/4/9/2/949219b41baceaa04d7cadaa96ddddb8f3784fbe/bonn-20-WB_Impf_Dich_1.jpg)
+[![](./bonn-20-WB_Impf_Dich_1-800x600.jpg)](./bonn-20-WB_Impf_Dich_1.jpg)
 
-[![](./bonn-20-WB_Impf_Dich_2-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/c/e/7/7/ce77a7bb31c2d2d5bc610ccfd26ce361d67dcb7a/bonn-20-WB_Impf_Dich_2.jpg)
+[![](./bonn-20-WB_Impf_Dich_2-800x600.jpg)](./bonn-20-WB_Impf_Dich_2.jpg)
 
-[![](./bonn-20-WB_Impf_Dich_3-800x600.jpg)](https://impf-dich.org/_Resources/Persistent/a/e/7/3/ae73ed1d7b9ce42735c0987a470763c6e882a034/bonn-20-WB_Impf_Dich_3.jpg)
+[![](./bonn-20-WB_Impf_Dich_3-800x600.jpg)](./bonn-20-WB_Impf_Dich_3.jpg)
