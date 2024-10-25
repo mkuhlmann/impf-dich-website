@@ -28,7 +28,7 @@ In der COVRAM-Studie berichteten die Medizinstudierenden immer wieder von klaren
 
 ![](./uni.png)
 
-![](./nicht uni.png)
+![](./nichtuni.png)
 
 „**Einhaltung des Arbeitsschutzes und der STIKO-Empfehlungen** bedeutet eben nicht pauschal zwischen Berufsgruppen und aufgrund des Ausbildungsstatus zu differenzieren, sondern insbesondere auf Basis des individuellen Risikokontakts“, so Manuel Kuhlmann, Co-Leiter der Studie und Vorstandsmitglied von „Impf Dich“.
 
