@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<input class="w-full" type="text" v-model="filterString" placeholder="Filtern ..." />
+		<input class="w-full border border-gray-300 rounded-md p-2" type="text" v-model="filterString" placeholder="Filtern ..." />
 		<div v-for="q in filteredQuestions">
 			<div class="mb-4 rounded-md shadow">
 				<a class="block bg-gray-100" v-on:click="q.open = !q.open">

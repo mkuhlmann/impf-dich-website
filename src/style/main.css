@@ -1,14 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
 	--color-impf: #5d9bd4;
 	--color-impfhover: #3a85cb;
 	--color-impf-2: #222c56;
-	
-	--font-heading: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	--font-raleway: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	--font-inter: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	--font-roboto: Roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+	--font-heading: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--font-raleway: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--font-inter: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--font-roboto: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+	font-family: 'Roboto', system-ui, sans-serif;
+	background-color: #f6f6f6;
 }
 
 .content {
@@ -101,4 +106,81 @@ a.link {
 
 .astro-route-announcer {
 	display: none;
+}
+
+/* Prose styling for article content */
+.prose {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-heading font-semibold text-gray-900 mt-8 mb-4;
+	}
+
+	h1 {
+		@apply text-3xl;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-xl;
+	}
+	h4 {
+		@apply text-lg;
+	}
+
+	p {
+		@apply mb-4 text-gray-700 leading-relaxed;
+	}
+
+	a {
+		@apply text-impf hover:text-impfhover underline;
+	}
+
+	ul,
+	ol {
+		@apply mb-4 ml-6;
+	}
+
+	li {
+		@apply mb-2;
+	}
+
+	ul li {
+		@apply list-disc;
+	}
+
+	ol li {
+		@apply list-decimal;
+	}
+
+	blockquote {
+		@apply border-l-4 border-impf bg-gray-50 p-4 mb-4 italic;
+	}
+
+	img {
+		@apply rounded-lg shadow-md mb-4;
+	}
+
+	hr {
+		@apply my-8 border-gray-200;
+	}
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.line-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }

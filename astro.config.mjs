@@ -4,13 +4,15 @@ import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
 import tailwindcss from '@tailwindcss/vite';
 
-
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://impf-dich.org',
-  integrations: [mdx(), sitemap(), vue()],
+	site: 'https://impf-dich.org',
+	integrations: [mdx(), sitemap(), vue()],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	vite: {
+		server: {
+			allowedHosts: ['sporting-senior-thick-himself.trycloudflare.com'],
+		},
+		plugins: [tailwindcss()],
+	},
 });

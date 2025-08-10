@@ -34,7 +34,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 	{
 		heroImagePath && (
 			<div class="bg-gray-700" style=" z-index: -100;">
-				<div class="container mx-auto flex justify-center" style="padding-top: 75px;">
+				<div class="container mx-auto flex justify-center">
 					<Image src={resolveImage(heroImagePath)()} alt="hero image" />
 				</div>
 			</div>
@@ -42,7 +42,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 	}
 
 	<div class="container mx-auto border-x-2 border-gray-200">
-		<div class="px-5 py-6 bg-stone-100" style={!heroImagePath ? 'margin-top: 80px;' : ''}>
+		<div class="px-5 py-6 bg-stone-100">
 			<h1 class="text-4xl font-light heading">{title}</h1>
 		</div>
 
