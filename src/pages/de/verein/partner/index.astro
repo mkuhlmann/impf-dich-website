@@ -1,25 +1,26 @@
 ---
 import Page from '@/layouts/Page.astro';
 interface Frontmatter {
-    name: string;
-    url: string;
+	name: string;
+	url: string;
 }
 const partners = await Astro.glob<Frontmatter>('./partners/*.md');
 ---
 
 <Page title="Partner">
-    {
-        partners.map((partner) => (
-            <div class="flex gap-5 items-center mb-10">
-                <div class="w-[400px]"> 
-                    
-                <Fragment set:html={partner.compiledContent()} />
-                </div>
-                <div>
-                    <h2 class="font-bold text-lg"> {partner.frontmatter.name} </h2>
-                    <a target="_blank" href={partner.frontmatter.link} class="text-impf hover:text-impfhover">{partner.frontmatter.link} </a>
-                </div>
-            </div>
-        ))
-    }
+	{
+		partners.map((partner) => (
+			<div class="flex gap-10 items-center mb-10">
+				<div class="w-[200px]">
+					<Fragment set:html={partner.compiledContent()} />
+				</div>
+				<div>
+					<h2 class="font-bold text-lg"> {partner.frontmatter.name} </h2>
+					<a target="_blank" href={partner.frontmatter.link} class="text-impf hover:text-impfhover">
+						{partner.frontmatter.link}{' '}
+					</a>
+				</div>
+			</div>
+		))
+	}
 </Page>
