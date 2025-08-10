@@ -1,14 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+	--color-impf: #5d9bd4;
+	--color-impfhover: #3a85cb;
+	--color-impf-2: #222c56;
+	
+	--font-heading: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	--font-raleway: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	--font-inter: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	--font-roboto: Roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .content {
 	h1 {
-		@apply mt-5 text-3xl font-heading;
+		@apply mt-4 text-3xl font-heading;
 	}
 
 	h2 {
-		@apply mt-5 text-2xl font-heading;
+		@apply mt-4 text-2xl font-heading;
 	}
 
 	h3 {
-		@apply mt-5 text-xl font-heading;
+		@apply mt-4 text-xl font-heading;
 	}
 
 	p {

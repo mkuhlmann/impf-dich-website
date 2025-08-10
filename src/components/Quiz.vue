@@ -43,7 +43,7 @@
 				</p>
 				<br />
 				<p>Aber auch wenn du noch nicht so viel weißt, keine Scheu, zu jeder Frage ist eine ausführliche Erklärung gegeben, sodass du in jedem Fall etwas neues lernst.</p>
-				<button class="mt-5 rounded bg-green-500 hover:bg-green-600 text-white text-xl py-3 px-5 cursor-pointer" v-on:click="startQuiz()">Start</button>
+				<button class="mt-4 rounded bg-green-500 hover:bg-green-600 text-white text-xl py-3 px-5 cursor-pointer" v-on:click="startQuiz()">Start</button>
 			</div>
 		</div>
 
@@ -146,7 +146,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+@reference '../style/main.css';
 .quiz {
 	box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 }
