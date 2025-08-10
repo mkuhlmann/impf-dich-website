@@ -9,7 +9,13 @@ dayjs.locale('de');
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection('news');
-	allPosts.reverse(); // Show newest first
+
+	// Sort by publishedAt in descending order (newest first)
+	allPosts.sort((a, b) => {
+		const dateA = a.data.publishedAt instanceof Date ? a.data.publishedAt : new Date(String(a.data.publishedAt) || 0);
+		const dateB = b.data.publishedAt instanceof Date ? b.data.publishedAt : new Date(String(b.data.publishedAt) || 0);
+		return dateB.getTime() - dateA.getTime();
+	});
 
 	const POSTS_PER_PAGE = 6;
 	const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);

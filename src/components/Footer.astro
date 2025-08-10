@@ -3,8 +3,14 @@ import { getCollection } from 'astro:content';
 
 const newsCollection = await getCollection('news');
 
-// limit to 5 posts
-const newsToShow = newsCollection.toReversed().slice(0, 5);
+// Sort by publishedAt in descending order (newest first) and limit to 5 posts
+const newsToShow = newsCollection
+	.sort((a, b) => {
+		const dateA = a.data.publishedAt instanceof Date ? a.data.publishedAt : new Date(String(a.data.publishedAt) || 0);
+		const dateB = b.data.publishedAt instanceof Date ? b.data.publishedAt : new Date(String(b.data.publishedAt) || 0);
+		return dateB.getTime() - dateA.getTime();
+	})
+	.slice(0, 5);
 ---
 
 <footer class="footer bg-gray-700 text-white border-t-impf border-t-8">
@@ -47,7 +53,7 @@ const newsToShow = newsCollection.toReversed().slice(0, 5);
 				{
 					newsToShow.map((entry) => (
 						<li class="list-disc ml-3">
-							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + entry.slug} class="block mb-2">
+							<a class="text-impf hover:text-impfhover cursor-pointer" href={'/de/news/' + entry.data.slug} class="block mb-2">
 								{entry.data.title}
 							</a>
 						</li>
