@@ -17,6 +17,8 @@ html {
 }
 
 .content {
+	word-wrap: break-word;
+
 	h1 {
 		@apply mt-4 text-3xl font-heading;
 	}

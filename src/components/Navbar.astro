@@ -25,7 +25,7 @@ const menuItems: MenuDefinition = {
 			to: '/de/verein/ueber-uns',
 			items: [
 				{
-					title: 'Archiv',
+					title: 'News',
 					to: '/de/news/1',
 				},
 				{
@@ -83,10 +83,16 @@ const menuItems: MenuDefinition = {
 		{
 			title: 'Lokalgruppen',
 			to: '/#lokalgruppen',
-			items: lokalgruppen.map((lokalgruppe) => ({
-				title: lokalgruppe.frontmatter.title,
-				to: lokalgruppe.url,
-			})),
+			items: [
+				...lokalgruppen.map((lokalgruppe) => ({
+					title: lokalgruppe.frontmatter.title,
+					to: lokalgruppe.url,
+				})),
+				{
+					title: '🠆 Mitmachen!',
+					to: '/de/verein/engagieren',
+				},
+			],
 		},
 		{
 			title: 'Wissen',
