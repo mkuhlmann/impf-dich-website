@@ -50,6 +50,5 @@ Rückfragen an:\
 Simon Hennes (Vorstandsvorsitzender; <simon.hennes@impf-dich.org>),\
 Anahita Blaschke (stellvertr. Vorsitzende; <anahita.blaschke@impf-dich.org>,\
 Fabian Brensing (stellvertr. Vorsitzender, <fabian.brensing@impf-dich.org>),\
-Manuel Kuhlmann (stellvertr. Vorsitzender, <manuel.kuhlmann@impf-dich.org>),\
 Lucas Phillip Reindl (stellvert. Vorsitzender, <lucas.reindl@impf-dich.org>,\
 oder direkt an die jeweiligen Lokalgruppen <https://impf-dich.org/de/lokalgruppen/uebersicht>

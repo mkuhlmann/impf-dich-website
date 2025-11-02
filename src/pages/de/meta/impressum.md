@@ -16,7 +16,7 @@ Deutschland
 **vertreten durch**
 
 Vorsitzender: Simon Hennes\
-stellvertretende Vorsitzende: Steffen Künzel, Fabian Brensing, Manuel Kuhlmann, Lucas Philipp Reindl
+stellvertretende Vorsitzende: Anahita Blaschke, Bernd Tim Seidenstücker, Fabian Brensing, Lucas Philipp Reindl
 
 ### Registereintrag
 
