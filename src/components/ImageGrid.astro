@@ -1,0 +1,120 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+	images: {
+		src: ImageMetadata;
+		alt: string;
+	}[];
+}
+
+const { images } = Astro.props;
+
+// Prepare images for client-side script
+const clientImages = images.map((img) => ({
+	src: img.src.src,
+	alt: img.alt,
+}));
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 not-prose">
+	{
+		images.map((image, index) => (
+			<div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-video" data-index={index}>
+				<Image src={image.src} alt={image.alt} class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105" />
+				<div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+			</div>
+		))
+	}
+</div>
+
+<div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true">
+	<button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 focus:outline-none z-50">&times;</button>
+
+	<div class="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+		<img id="lightbox-img" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" src="" alt="" />
+
+		<button id="lightbox-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-6xl font-bold hover:text-gray-300 p-4 focus:outline-none select-none">&#8249;</button>
+		<button id="lightbox-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-6xl font-bold hover:text-gray-300 p-4 focus:outline-none select-none">&#8250;</button>
+	</div>
+
+	<div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white text-lg font-medium px-4"></div>
+</div>
+
+<script define:vars={{ clientImages }}>
+	let currentIndex = 0;
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img');
+	const lightboxCaption = document.getElementById('lightbox-caption');
+	const closeBtn = document.getElementById('lightbox-close');
+	const prevBtn = document.getElementById('lightbox-prev');
+	const nextBtn = document.getElementById('lightbox-next');
+	const triggers = document.querySelectorAll('[data-index]');
+
+	function openLightbox(index) {
+		currentIndex = index;
+		updateLightboxImage();
+		lightbox.classList.remove('hidden');
+		// Small delay to allow display:block to apply before opacity transition
+		requestAnimationFrame(() => {
+			lightbox.classList.remove('opacity-0', 'pointer-events-none');
+		});
+		document.body.style.overflow = 'hidden';
+		lightbox.setAttribute('aria-hidden', 'false');
+	}
+
+	function closeLightbox() {
+		lightbox.classList.add('opacity-0', 'pointer-events-none');
+		lightbox.setAttribute('aria-hidden', 'true');
+		setTimeout(() => {
+			lightbox.classList.add('hidden');
+			document.body.style.overflow = '';
+		}, 300);
+	}
+
+	function changeImage(direction) {
+		currentIndex = (currentIndex + direction + clientImages.length) % clientImages.length;
+		updateLightboxImage();
+	}
+
+	function updateLightboxImage() {
+		const image = clientImages[currentIndex];
+		lightboxImg.src = image.src;
+		lightboxImg.alt = image.alt;
+		lightboxCaption.textContent = image.alt;
+	}
+
+	// Event Listeners
+	triggers.forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const index = parseInt(trigger.getAttribute('data-index'));
+			openLightbox(index);
+		});
+	});
+
+	closeBtn.addEventListener('click', closeLightbox);
+
+	prevBtn.addEventListener('click', (e) => {
+		e.stopPropagation();
+		changeImage(-1);
+	});
+
+	nextBtn.addEventListener('click', (e) => {
+		e.stopPropagation();
+		changeImage(1);
+	});
+
+	lightbox.addEventListener('click', (e) => {
+		if (e.target === lightbox || e.target.closest('.max-w-7xl') === null) {
+			closeLightbox();
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (lightbox.classList.contains('hidden')) return;
+		if (e.key === 'Escape') closeLightbox();
+		if (e.key === 'ArrowLeft') changeImage(-1);
+		if (e.key === 'ArrowRight') changeImage(1);
+	});
+</script>

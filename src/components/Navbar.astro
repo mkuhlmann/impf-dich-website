@@ -85,7 +85,7 @@ const menuItems: MenuDefinition = {
 			to: '/#lokalgruppen',
 			items: [
 				...lokalgruppen.map((lokalgruppe) => ({
-					title: lokalgruppe.frontmatter.title,
+					title: lokalgruppe.frontmatter.title || '-',
 					to: lokalgruppe.url,
 				})),
 				{
