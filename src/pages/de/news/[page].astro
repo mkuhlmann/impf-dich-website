@@ -71,8 +71,16 @@ const posts = page.data;
 function cleanContentPreview(content: string, maxLength: number = 200): string {
 	if (!content) return '';
 
+	// Remove MDX imports and exports
+	let cleaned = content
+		.replace(/^import\s+.*$/gm, '')
+		.replace(/^export\s+.*$/gm, '');
+
+	// Remove HTML/JSX tags
+	cleaned = cleaned.replace(/<[^>]*>/g, '');
+
 	// Remove markdown headers and extra whitespace
-	const cleaned = content
+	cleaned = cleaned
 		.replace(/^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} #{0,}(\n)?\s{0,}$/gm, '$1$2$3')
 		.replace(/\n\s*\n/g, ' ')
 		.replace(/\s+/g, ' ')
