@@ -227,10 +227,10 @@ Genauer erklärt: Eine Evaluation des Impfstoffes hat ergeben, dass der Impfstof
 | **Systemorganklasse**                                        | **Häufigkeit**           | **Nebenwirkungen**                             |
 | ------------------------------------------------------------ | ------------------------ | ---------------------------------------------- |
 | Erkrankungen des Nervensystems                               | Sehr häufig              | Kopfschmerz                                    |
-| Häufig                                                       | Schwindel                |                                                |
+|                                                              | Häufig                   | Schwindel                                      |
 | Erkrankungen des Verdauungstraktes                           | Häufig                   | Übelkeit                                       |
 | Allgemeine Erkrankungen und Beschwerden am Verabreichungsort | Sehr häufig              | Injektionsstelle: Schmerz, Schwellung, Erythem |
-| Häufig                                                       | Fieber, Abgeschlagenheit | An der Injektionsstelle: Pruritus, Einblutung  |
+|                                                              | Häufig                   | Fieber, Abgeschlagenheit; an der Injektionsstelle: Pruritus, Einblutung |
 
 </div>
 
